@@ -3,7 +3,7 @@
  * class Pesanan untuk memodelkan pesanan.
  *
  * @author (Luthfi Musthafa_1506673656)
- * @version (2018.03.01)
+ * @version (2018.02.22)
  */
 public class Pesanan
 {
@@ -15,117 +15,56 @@ public class Pesanan
     private boolean isDiproses;
     private boolean isSelesai;
 
-    /**
-     * Constructor for objects of class Pesanan
-     * 
-     * @param biaya, pelanggan.
-     */
-    public Pesanan(double biaya, Customer pelanggan)
+    public Pesanan()
     {
-        // instance variables
-        this.biaya = biaya;
-        this.pelanggan = pelanggan;
+        //code
     }
 
-    /**
-     * Accessor for objects of class Pesanan
-     * untuk mendapatkan nilai biaya
-     * 
-     * @return biaya.
-     */
+   
     public double getBiaya()
     {
         //code
-        return biaya;
+        
+        return 0;
     }
     
-    /**
-     * Accessor for objects of class Pesanan
-     * untuk mendapatkan nilai pelanggan
-     * 
-     * @return pelanggan.
-     */
     public Customer getPelanggan()
     {
         //code
         
-        return pelanggan;
+        return null;
     }
     
-    /**
-     * Accessor for objects of class Pesanan
-     * untuk mendapatkan nilai status diproses
-     * 
-     * @return isDiproses.
-     */
     public boolean getStatusDiproses()
     {
         //code
         
-        return isDiproses;
+        return false;
     }
     
-    /**
-     * Accessor for objects of class Pesanan
-     * untuk mendapatkan nilai status selesai
-     * 
-     * @return isSelesai.
-     */
     public boolean getStatusSelesai()
     {
         //code
         
-        return isSelesai;
+        return false;
     }
     
-    /**
-     * Mutator for objects of class Pesanan
-     * untuk menentukan nilai biaya
-     * 
-     * @param biaya.
-     */
     public void setBiaya(double biaya)
     {
-        this.biaya = biaya;
+        //code
     }
     
-    /**
-     * Mutator for objects of class Pesanan
-     * untuk menenetukan nilai pelanggan
-     * 
-     * @param baru.
-     */
     public void setPelanggan(Customer baru)
     {
-        pelanggan = baru;
+        //code
     }
     
-    /**
-     * Mutator for objects of class Pesanan
-     * untuk menentukan nilai status diproses
-     * 
-     * @param diproses.
-     */
     public void setStatusDiproses(boolean diproses)
     {
-        isDiproses = diproses;
+        //code
     }
     
-    /**
-     * Mutator for objects of class Pesanan
-     * untuk menentukan nilai status selesai
-     * 
-     * @param diproses.
-     */
     public void setStatusSelesai(boolean diproses)
-    {
-        isSelesai = diproses;
-    }
-    
-    /**
-     * Method untuk print data
-     */
-    public void printData()
     {
         //code
     }
