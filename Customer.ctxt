@@ -1,21 +1,21 @@
 #BlueJ class context
 comment0.target=Customer
-comment0.text=\r\n\ class\ Customer\ untuk\ memodelkan\ Customer.\r\n\r\n\ @author\ (Luthfi\ Musthafa_1506673656)\r\n\ @version\ (2018.03.01)\r\n
+comment0.text=\r\n\ class\ Customer\ untuk\ memodelkan\ Customer.\r\n\r\n\ @author\ Luthfi\ Musthafa_1506673656\r\n\ @version\ 2018.02.22\r\n
 comment1.params=id\ nama
 comment1.target=Customer(int,\ java.lang.String)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Customer\r\n\ \r\n\ @param\ id,\ nama.\r\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Customer\r\n\ \r\n\ @param\ id\r\n\ @param\ nama\r\n
 comment2.params=
 comment2.target=int\ getID()
-comment2.text=\r\n\ Accessor\ for\ objects\ of\ class\ Customer\r\n\ untuk\ mendapatkan\ nilai\ id\r\n\ \r\n\ @return\ id.\r\n
+comment2.text=\r\n\ Accessor\ for\ objects\ of\ class\ Customer\r\n\ untuk\ mendapatkan\ nilai\ id\r\n\ \r\n\ @return\ id\r\n
 comment3.params=
 comment3.target=java.lang.String\ getNama()
-comment3.text=\r\n\ Accessor\ for\ objects\ of\ class\ Customer\r\n\ untuk\ mendapatkan\ nilai\ nama\r\n\ \r\n\ @return\ nama.\r\n
+comment3.text=\r\n\ Accessor\ for\ objects\ of\ class\ Customer\r\n\ untuk\ mendapatkan\ nilai\ nama\r\n\ \r\n\ @return\ nama\r\n
 comment4.params=id
 comment4.target=void\ setID(int)
-comment4.text=\r\n\ Mutator\ for\ objects\ of\ class\ Customer\r\n\ untuk\ menentukan\ nilai\ id\r\n\ \r\n\ @param\ id.\r\n
+comment4.text=\r\n\ Mutator\ for\ objects\ of\ class\ Customer\r\n\ untuk\ menentukan\ nilai\ id\r\n\ \r\n\ @param\ id\r\n
 comment5.params=nama
 comment5.target=void\ setNama(java.lang.String)
-comment5.text=\r\n\ Mutator\ for\ objects\ of\ class\ Customer\r\n\ untuk\ menentukan\ nilai\ id\r\n\ \r\n\ @param\ nama.\r\n
+comment5.text=\r\n\ Mutator\ for\ objects\ of\ class\ Customer\r\n\ untuk\ menentukan\ nilai\ id\r\n\ \r\n\ @param\ nama\r\n
 comment6.params=
 comment6.target=void\ printData()
 numComments=7

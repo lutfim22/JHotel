@@ -2,8 +2,8 @@
 /**
  * Write a description of class Lokasi here.
  *
- * @author (Luthfi Musthafa_1506673656)
- * @version (2018.03.01)
+ * @author Luthfi Musthafa_1506673656
+ * @version 2018.02.22
  */
 public class Lokasi
 {
@@ -15,7 +15,9 @@ public class Lokasi
     /**
      * Constructor for objects of class Lokasi
      * 
-     * @param x_coord, y_coord, deskripsiLokasi.
+     * @param x_coord
+     * @param y_coord
+     * @param deskripsiLokasi
      */
     public Lokasi(float x_coord, float y_coord, String deskripsiLokasi)
     {
@@ -29,7 +31,7 @@ public class Lokasi
      * Accessor for objects of class Lokasi
      * untuk mendapatkan nilai X
      * 
-     * @return x_coord.
+     * @return x_coord
      */
     public float getX()
     {
@@ -40,7 +42,7 @@ public class Lokasi
      * Accessor for objects of class Lokasi
      * untuk mendapatkan nilai Y
      * 
-     * @return y_coord.
+     * @return y_coord
      */
     public float getY()
     {
@@ -51,7 +53,7 @@ public class Lokasi
      * Accessor for objects of class Lokasi
      * untuk mendapatkan nilai X
      * 
-     * @return deskripsiLokasi.
+     * @return deskripsiLokasi
      */
     public String getDeskripsi()
     {
@@ -62,7 +64,7 @@ public class Lokasi
      * Mutator for objects of class Lokasi
      * untuk menentukan nilai X
      * 
-     * @param x_coord.
+     * @param x_coord
      */
     public void setX(float x_coord)
     {
@@ -73,7 +75,7 @@ public class Lokasi
      * Mutator for objects of class Lokasi
      * untuk menentukan nilai Y
      * 
-     * @param y_coord.
+     * @param y_coord
      */
     public void setY(float y_coord)
     {
@@ -84,7 +86,7 @@ public class Lokasi
      * Mutator for objects of class Lokasi
      * untuk menentukan nilai deskripsi
      * 
-     * @param deskripsi.
+     * @param deskripsi
      */
     public void setDeskripsi(String deskripsi)
     {

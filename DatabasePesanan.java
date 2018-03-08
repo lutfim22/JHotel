@@ -2,21 +2,29 @@
 /**
  * class DatabasePesanan untuk memodelkan Database Pesanan.
  *
- * @author (Luthfi Musthafa_1506673656)
- * @version (2018.03.01)
+ * @author Luthfi Musthafa_1506673656
+ * @version 2018.02.22
  */
 public class DatabasePesanan
 {
     // instance variables - replace the example below with your own
     private String[] list_pesanan;
 
-    public boolean addPesanan(Pesanan baru)
+    /**
+     * 
+     * @return false
+     */
+    public static boolean addPesanan(Pesanan baru)
     {
         //code
         
         return false;
     }
     
+    /**
+     * 
+     * @return false
+     */
     public boolean removePesanan(Pesanan pesan)
     {
         //code
@@ -24,6 +32,10 @@ public class DatabasePesanan
         return false;
     }
     
+    /**
+     * 
+     * @return null
+     */
     public Pesanan getPesanan(Customer cust)
     {
         //code
@@ -31,6 +43,10 @@ public class DatabasePesanan
         return null;
     }
     
+    /**
+     * 
+     * @return null
+     */
     public String[] getPesananDatabase()
     {
         //code

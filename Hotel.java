@@ -2,8 +2,8 @@
 /**
  * Write a description of class Hotel here.
  *
- * @author (Luthfi Musthafa_1506673656)
- * @version (2018.03.01)
+ * @author Luthfi Musthafa_1506673656
+ * @version 2018.02.22
  */
 public class Hotel
 {
@@ -15,7 +15,9 @@ public class Hotel
     /**
      * Constructor for objects of class Hotel
      * 
-     * @param nama, lokasi, bintang.
+     * @param nama
+     * @param lokasi
+     * @param bintang
      */
     public Hotel(String nama, Lokasi lokasi, int bintang)
     {
@@ -29,7 +31,7 @@ public class Hotel
      * Accessor for objects of class Hotel
      * untuk mendapatkan nilai binatang
      * 
-     * @return bintang.
+     * @return bintang
      */
     public int getBintang()
     {
@@ -40,7 +42,7 @@ public class Hotel
      * Accessor for objects of class Hotel
      * untuk mendapatkan nilai nama
      * 
-     * @return nama.
+     * @return nama
      */
     public String getNama()
     {
@@ -51,7 +53,7 @@ public class Hotel
      * Accessor for objects of class Hotel
      * untuk mendapatkan nilai lokasi
      * 
-     * @return lokasi.
+     * @return lokasi
      */
     public Lokasi getLokasi()
     {
@@ -62,7 +64,7 @@ public class Hotel
      * Mutator for objects of class Hotel
      * untuk menentukan nilai nama
      * 
-     * @param nama.
+     * @param nama
      */
     public void setNama(String nama)
     {
@@ -73,7 +75,7 @@ public class Hotel
      * Mutator for objects of class Hotel
      * untuk menentukan nilai lokasi
      * 
-     * @param lokasi.
+     * @param lokasi
      */
     public void setLokasi(Lokasi lokasi)
     {
@@ -84,7 +86,7 @@ public class Hotel
      * Mutator for objects of class Hotel
      * untuk menentukan nilai bintang
      * 
-     * @param bintang.
+     * @param bintang
      */
     public void setBintang(int bintang)
     {

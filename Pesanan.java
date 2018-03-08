@@ -2,8 +2,8 @@
 /**
  * class Pesanan untuk memodelkan pesanan.
  *
- * @author (Luthfi Musthafa_1506673656)
- * @version (2018.03.01)
+ * @author Luthfi Musthafa_1506673656
+ * @version 2018.02.22
  */
 public class Pesanan
 {
@@ -14,15 +14,16 @@ public class Pesanan
     private String jenis_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
+    private Room kamar;
 
     /**
      * Constructor for objects of class Pesanan
      * 
-     * @param biaya, pelanggan.
+     * @param biaya
+     * @param pelanggan
      */
     public Pesanan(double biaya, Customer pelanggan)
     {
-        // instance variables
         this.biaya = biaya;
         this.pelanggan = pelanggan;
     }
@@ -31,11 +32,12 @@ public class Pesanan
      * Accessor for objects of class Pesanan
      * untuk mendapatkan nilai biaya
      * 
-     * @return biaya.
+     * @return biaya
      */
     public double getBiaya()
     {
         //code
+        
         return biaya;
     }
     
@@ -43,7 +45,7 @@ public class Pesanan
      * Accessor for objects of class Pesanan
      * untuk mendapatkan nilai pelanggan
      * 
-     * @return pelanggan.
+     * @return pelanggan
      */
     public Customer getPelanggan()
     {
@@ -56,7 +58,7 @@ public class Pesanan
      * Accessor for objects of class Pesanan
      * untuk mendapatkan nilai status diproses
      * 
-     * @return isDiproses.
+     * @return isDiproses
      */
     public boolean getStatusDiproses()
     {
@@ -69,7 +71,7 @@ public class Pesanan
      * Accessor for objects of class Pesanan
      * untuk mendapatkan nilai status selesai
      * 
-     * @return isSelesai.
+     * @return isSelesai
      */
     public boolean getStatusSelesai()
     {
@@ -78,11 +80,16 @@ public class Pesanan
         return isSelesai;
     }
     
+    public Room getRoom()
+    {
+        return kamar;
+    }
+    
     /**
      * Mutator for objects of class Pesanan
      * untuk menentukan nilai biaya
      * 
-     * @param biaya.
+     * @param biaya
      */
     public void setBiaya(double biaya)
     {
@@ -93,7 +100,7 @@ public class Pesanan
      * Mutator for objects of class Pesanan
      * untuk menenetukan nilai pelanggan
      * 
-     * @param baru.
+     * @param baru
      */
     public void setPelanggan(Customer baru)
     {
@@ -104,7 +111,7 @@ public class Pesanan
      * Mutator for objects of class Pesanan
      * untuk menentukan nilai status diproses
      * 
-     * @param diproses.
+     * @param diproses
      */
     public void setStatusDiproses(boolean diproses)
     {
@@ -115,11 +122,16 @@ public class Pesanan
      * Mutator for objects of class Pesanan
      * untuk menentukan nilai status selesai
      * 
-     * @param diproses.
+     * @param diproses
      */
     public void setStatusSelesai(boolean diproses)
     {
         isSelesai = diproses;
+    }
+    
+    public void setRoom(Room kamar)
+    {
+        this.kamar = kamar;
     }
     
     /**
@@ -127,6 +139,6 @@ public class Pesanan
      */
     public void printData()
     {
-        //code
+        
     }
 }

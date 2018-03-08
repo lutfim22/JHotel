@@ -2,8 +2,8 @@
 /**
  * class Customer untuk memodelkan Customer.
  *
- * @author (Luthfi Musthafa_1506673656)
- * @version (2018.03.01)
+ * @author Luthfi Musthafa_1506673656
+ * @version 2018.02.22
  */
 public class Customer
 {
@@ -14,11 +14,11 @@ public class Customer
     /**
      * Constructor for objects of class Customer
      * 
-     * @param id, nama.
+     * @param id
+     * @param nama
      */
     public Customer(int id, String nama)
     {
-        //instance variable
         this.id = id;
         this.nama = nama;
     }
@@ -27,7 +27,7 @@ public class Customer
      * Accessor for objects of class Customer
      * untuk mendapatkan nilai id
      * 
-     * @return id.
+     * @return id
      */
     public int getID()
     {
@@ -40,7 +40,7 @@ public class Customer
      * Accessor for objects of class Customer
      * untuk mendapatkan nilai nama
      * 
-     * @return nama.
+     * @return nama
      */
     public String getNama()
     {
@@ -53,11 +53,10 @@ public class Customer
      * Mutator for objects of class Customer
      * untuk menentukan nilai id
      * 
-     * @param id.
+     * @param id
      */
     public void setID(int id)
     {
-       //put your code here
        this.id = id;
     }
     
@@ -65,16 +64,15 @@ public class Customer
      * Mutator for objects of class Customer
      * untuk menentukan nilai id
      * 
-     * @param nama.
+     * @param nama
      */
     public void setNama(String nama)
     {
-        //code
         this.nama = nama;
     }
     
     public void printData()
     {
-        
+        System.out.println(nama);
     }
 }
