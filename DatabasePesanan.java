@@ -1,16 +1,17 @@
 
 /**
- * class DatabasePesanan untuk memodelkan Database Pesanan.
+ * berisi database pesanan.
  *
  * @author Luthfi Musthafa_1506673656
- * @version 2018.02.22
+ * @version 2018.03.10
  */
 public class DatabasePesanan
 {
     // instance variables - replace the example below with your own
-    private String[] list_pesanan;
+    private static String[] list_pesanan;
 
     /**
+     * untuk menambahkan data pesanan.
      * 
      * @return false
      */
@@ -22,10 +23,11 @@ public class DatabasePesanan
     }
     
     /**
+     * untuk menghapus data pesanan.
      * 
      * @return false
      */
-    public boolean removePesanan(Pesanan pesan)
+    public static boolean removePesanan(Pesanan pesan)
     {
         //code
         
@@ -33,10 +35,11 @@ public class DatabasePesanan
     }
     
     /**
+     * untuk mendapatkan database pesanan.
      * 
      * @return null
      */
-    public Pesanan getPesanan(Customer cust)
+    public static Pesanan getPesanan(Customer cust)
     {
         //code
         
@@ -47,14 +50,14 @@ public class DatabasePesanan
      * 
      * @return null
      */
-    public String[] getPesananDatabase()
+    public static String[] getPesananDatabase()
     {
         //code
         
         return null;
     }
     
-    public void pesananDibatalkan(Pesanan pesan)
+    public static void pesananDibatalkan(Pesanan pesan)
     {
         //code
     }

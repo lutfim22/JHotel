@@ -3,7 +3,7 @@
  * class Pesanan untuk memodelkan pesanan.
  *
  * @author Luthfi Musthafa_1506673656
- * @version 2018.02.22
+ * @version 2018.03.10
  */
 public class Pesanan
 {
@@ -11,13 +11,13 @@ public class Pesanan
     private double biaya;
     private Customer pelanggan;
     private String nama_pelanggan;
-    private String jenis_kamar;
+    private TipeKamar tipe_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
 
     /**
-     * Constructor for objects of class Pesanan
+     * Constructor for objects of class Pesanan.
      * 
      * @param biaya
      * @param pelanggan
@@ -26,11 +26,12 @@ public class Pesanan
     {
         this.biaya = biaya;
         this.pelanggan = pelanggan;
+        nama_pelanggan = pelanggan.getNama();
     }
 
     /**
      * Accessor for objects of class Pesanan
-     * untuk mendapatkan nilai biaya
+     * untuk mendapatkan nilai biaya.
      * 
      * @return biaya
      */
@@ -43,7 +44,7 @@ public class Pesanan
     
     /**
      * Accessor for objects of class Pesanan
-     * untuk mendapatkan nilai pelanggan
+     * untuk mendapatkan nilai pelanggan.
      * 
      * @return pelanggan
      */
@@ -54,9 +55,19 @@ public class Pesanan
         return pelanggan;
     }
     
+    public String getNamaPelanggan()
+    {
+        return nama_pelanggan;
+    }
+    
+    public TipeKamar getTipeKamar()
+    {
+        return tipe_kamar;
+    }
+    
     /**
      * Accessor for objects of class Pesanan
-     * untuk mendapatkan nilai status diproses
+     * untuk mendapatkan nilai status diproses.
      * 
      * @return isDiproses
      */
@@ -69,7 +80,7 @@ public class Pesanan
     
     /**
      * Accessor for objects of class Pesanan
-     * untuk mendapatkan nilai status selesai
+     * untuk mendapatkan nilai status selesai.
      * 
      * @return isSelesai
      */
@@ -87,7 +98,7 @@ public class Pesanan
     
     /**
      * Mutator for objects of class Pesanan
-     * untuk menentukan nilai biaya
+     * untuk menentukan nilai biaya.
      * 
      * @param biaya
      */
@@ -98,18 +109,28 @@ public class Pesanan
     
     /**
      * Mutator for objects of class Pesanan
-     * untuk menenetukan nilai pelanggan
+     * untuk menenetukan nilai pelanggan.
      * 
      * @param baru
      */
-    public void setPelanggan(Customer baru)
+    public void setPelanggan(Customer pelanggan)
     {
-        pelanggan = baru;
+        this.pelanggan = pelanggan;
+    }
+    
+    public void setNamaPelanggan(String nama_pelanggan)
+    {
+        this.nama_pelanggan = nama_pelanggan;
+    }
+    
+    public void setTipeKamar(TipeKamar tipe_kamar)
+    {
+        this.tipe_kamar = tipe_kamar;
     }
     
     /**
      * Mutator for objects of class Pesanan
-     * untuk menentukan nilai status diproses
+     * untuk menentukan nilai status diproses.
      * 
      * @param diproses
      */
@@ -120,13 +141,13 @@ public class Pesanan
     
     /**
      * Mutator for objects of class Pesanan
-     * untuk menentukan nilai status selesai
+     * untuk menentukan nilai status selesai.
      * 
      * @param diproses
      */
-    public void setStatusSelesai(boolean diproses)
+    public void setStatusSelesai(boolean selesai)
     {
-        isSelesai = diproses;
+        isSelesai = selesai;
     }
     
     public void setRoom(Room kamar)
@@ -135,10 +156,14 @@ public class Pesanan
     }
     
     /**
-     * Method untuk print data
+     * untuk menampilkan data pada class Pesanan.
      */
     public void printData()
     {
-        
+        System.out.printf("\nPesanan\n");
+        System.out.println("Nama Pelanggan: " +nama_pelanggan);
+        System.out.println("Tipe Kamar: " +tipe_kamar);
+        System.out.println("Status layanan diproses: " +isDiproses);
+        System.out.println("Status layanan selesai: " +isSelesai);
     }
 }

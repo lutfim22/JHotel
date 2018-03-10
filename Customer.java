@@ -3,7 +3,7 @@
  * class Customer untuk memodelkan Customer.
  *
  * @author Luthfi Musthafa_1506673656
- * @version 2018.02.22
+ * @version 2018.03.10
  */
 public class Customer
 {
@@ -12,7 +12,7 @@ public class Customer
     protected String nama;
     
     /**
-     * Constructor for objects of class Customer
+     * Constructor for objects of class Customer.
      * 
      * @param id
      * @param nama
@@ -25,7 +25,7 @@ public class Customer
 
     /**
      * Accessor for objects of class Customer
-     * untuk mendapatkan nilai id
+     * untuk mendapatkan nilai id.
      * 
      * @return id
      */
@@ -38,7 +38,7 @@ public class Customer
     
     /**
      * Accessor for objects of class Customer
-     * untuk mendapatkan nilai nama
+     * untuk mendapatkan nilai nama.
      * 
      * @return nama
      */
@@ -51,7 +51,7 @@ public class Customer
     
     /**
      * Mutator for objects of class Customer
-     * untuk menentukan nilai id
+     * untuk menentukan nilai id.
      * 
      * @param id
      */
@@ -62,7 +62,7 @@ public class Customer
     
     /**
      * Mutator for objects of class Customer
-     * untuk menentukan nilai id
+     * untuk menentukan nilai id.
      * 
      * @param nama
      */
@@ -71,8 +71,13 @@ public class Customer
         this.nama = nama;
     }
     
+    /**
+     * untuk menampilkan data pada class Customer.
+     */
     public void printData()
     {
-        System.out.println(nama);
+        System.out.printf("\nCustomer\n");
+        System.out.println("ID: " +id);
+        System.out.println("Nama: " +nama);
     }
 }

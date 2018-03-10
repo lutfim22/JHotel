@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=StatusKamar
-comment0.text=\r\n\ Enumeration\ class\ StatusKamar\ -\ write\ a\ description\ of\ the\ enum\ class\ here\r\n\r\n\ @author\ (your\ name\ here)\r\n\ @version\ (version\ number\ or\ date\ here)\r\n
+comment0.text=\r\n\ Enumeration\ class\ StatusKamar\ -\ berisi\ status-status\ kamar\ pada\ JHotel.\r\n\r\n\ @author\ Luthfi\ Musthafa_1506673656\r\n\ @version\ 2018.03.10\r\n
 comment1.params=status
 comment1.target=StatusKamar(java.lang.String)
 comment2.params=

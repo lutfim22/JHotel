@@ -1,16 +1,17 @@
 
 /**
- * class DatabaseCustomer Database Customer.
+ * berisi Database Customer.
  *
  * @author Luthfi Musthafa_1506673656
- * @version 2018.02.22
+ * @version 2018.03.10
  */
 public class DatabaseCustomer
 {
     // instance variables - replace the example below with your own
-    private String[] list_customer;
+    private static String[] list_customer;
    
     /**
+     * untuk menambahkan data customer.
      * 
      * @return false
      */
@@ -22,10 +23,11 @@ public class DatabaseCustomer
     }
     
     /**
+     * untuk menghapus data customer.
      * 
      * @return false
      */
-    public boolean removeCustomer(int id)
+    public static boolean removeCustomer(int id)
     {
         //code
         
@@ -33,10 +35,11 @@ public class DatabaseCustomer
     }
     
     /**
+     * untuk mendapatkan database customer.
      * 
      * @return null
      */
-    public String[] getCustomerDatabase()
+    public static String[] getCustomerDatabase()
     {
         //code
         

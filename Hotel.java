@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Hotel here.
+ * Berisi informasi tentang hotel.
  *
  * @author Luthfi Musthafa_1506673656
- * @version 2018.02.22
+ * @version 2018.03.10
  */
 public class Hotel
 {
@@ -13,7 +13,7 @@ public class Hotel
     private int bintang;
 
     /**
-     * Constructor for objects of class Hotel
+     * Constructor for objects of class Hotel.
      * 
      * @param nama
      * @param lokasi
@@ -29,7 +29,7 @@ public class Hotel
     
     /**
      * Accessor for objects of class Hotel
-     * untuk mendapatkan nilai binatang
+     * untuk mendapatkan nilai binatang.
      * 
      * @return bintang
      */
@@ -40,7 +40,7 @@ public class Hotel
     
     /**
      * Accessor for objects of class Hotel
-     * untuk mendapatkan nilai nama
+     * untuk mendapatkan nilai nama.
      * 
      * @return nama
      */
@@ -51,7 +51,7 @@ public class Hotel
     
     /**
      * Accessor for objects of class Hotel
-     * untuk mendapatkan nilai lokasi
+     * untuk mendapatkan nilai lokasi.
      * 
      * @return lokasi
      */
@@ -62,7 +62,7 @@ public class Hotel
     
     /**
      * Mutator for objects of class Hotel
-     * untuk menentukan nilai nama
+     * untuk menentukan nilai nama.
      * 
      * @param nama
      */
@@ -73,7 +73,7 @@ public class Hotel
     
     /**
      * Mutator for objects of class Hotel
-     * untuk menentukan nilai lokasi
+     * untuk menentukan nilai lokasi.
      * 
      * @param lokasi
      */
@@ -84,12 +84,23 @@ public class Hotel
     
     /**
      * Mutator for objects of class Hotel
-     * untuk menentukan nilai bintang
+     * untuk menentukan nilai bintang.
      * 
      * @param bintang
      */
     public void setBintang(int bintang)
     {
         this.bintang = bintang;
+    }
+    
+    /**
+     * untuk menampilkan data pada class Hotel.
+     */
+    public void printData()
+    {
+        System.out.printf("\nHotel\n");
+        System.out.println("Nama Hotel: " +nama);
+        System.out.println("Lokasi: " +lokasi.getDeskripsi());
+        System.out.println("Bintang: " +bintang);
     }
 }

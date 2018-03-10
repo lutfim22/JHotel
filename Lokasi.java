@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Lokasi here.
+ * Class Lokasi berisi tentang data-data Lokasi Hotel.
  *
  * @author Luthfi Musthafa_1506673656
- * @version 2018.02.22
+ * @version 2018.03.10
  */
 public class Lokasi
 {
@@ -13,7 +13,7 @@ public class Lokasi
     private String deskripsiLokasi;
 
     /**
-     * Constructor for objects of class Lokasi
+     * Constructor for objects of class Lokasi.
      * 
      * @param x_coord
      * @param y_coord
@@ -29,7 +29,7 @@ public class Lokasi
     
     /**
      * Accessor for objects of class Lokasi
-     * untuk mendapatkan nilai X
+     * untuk mendapatkan nilai X.
      * 
      * @return x_coord
      */
@@ -40,7 +40,7 @@ public class Lokasi
     
     /**
      * Accessor for objects of class Lokasi
-     * untuk mendapatkan nilai Y
+     * untuk mendapatkan nilai Y.
      * 
      * @return y_coord
      */
@@ -51,7 +51,7 @@ public class Lokasi
     
     /**
      * Accessor for objects of class Lokasi
-     * untuk mendapatkan nilai X
+     * untuk mendapatkan nilai X.
      * 
      * @return deskripsiLokasi
      */
@@ -62,7 +62,7 @@ public class Lokasi
     
     /**
      * Mutator for objects of class Lokasi
-     * untuk menentukan nilai X
+     * untuk menentukan nilai X.
      * 
      * @param x_coord
      */
@@ -73,7 +73,7 @@ public class Lokasi
     
     /**
      * Mutator for objects of class Lokasi
-     * untuk menentukan nilai Y
+     * untuk menentukan nilai Y.
      * 
      * @param y_coord
      */
@@ -84,7 +84,7 @@ public class Lokasi
     
     /**
      * Mutator for objects of class Lokasi
-     * untuk menentukan nilai deskripsi
+     * untuk menentukan nilai deskripsi.
      * 
      * @param deskripsi
      */
@@ -93,8 +93,14 @@ public class Lokasi
         deskripsiLokasi = deskripsi;
     }
     
+    /**
+     * untuk menampilkan data pada class Lokasi.
+     */
     public void printData()
     {
-      
+        System.out.printf("\nLokasi\n");
+        System.out.println("Koordinat X: " +x_coord);
+        System.out.println("Koordinat Y: " +y_coord);
+        System.out.println("Deskripsi: " +deskripsiLokasi);
     }
 }
