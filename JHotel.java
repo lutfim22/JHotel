@@ -14,6 +14,25 @@ public class JHotel
      */
     public static void main(String args[])
     {
+        Lokasi l = new Lokasi(69,69,"bebas");
+        
+        Hotel h = new Hotel("ASaasd",l,7);
+        SingleRoom sr = new SingleRoom(h,"222",true,StatusKamar.Booked);
+        Customer c = new Customer(22,"Luthfi");
+        Room r = sr;
+        //Room r = new Room(h,);
+        Pesanan p = new Pesanan(3,c,r);
+        
+        System.out.println("Welcome to JHotel");
+        l.printData();
+        c.printData();
+        h.printData();
+        
+        Administrasi.pesananDitugaskan(p, r);
+        r.printData();
+        p.printData();
+        
+        /* Modul 3
         Lokasi lokasi = new Lokasi(69, 69, "Jauh");
         Customer customer = new Customer(22, "James");
         Hotel hotel = new Hotel("Alexis", lokasi, 7);
@@ -53,6 +72,7 @@ public class JHotel
         Administrasi.pesananSelesai(pesan);
         room.printData();
         pesan.printData();
+        */
     }
     
     /**
