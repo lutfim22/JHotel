@@ -32,6 +32,17 @@ public class JHotel
         r.printData();
         p.printData();
         
+        System.out.println("Benar Double Room");
+        System.out.println(sr instanceof SingleRoom);
+        
+        DoubleRoom dr = new DoubleRoom(h,"222",true,StatusKamar.Booked);
+        Room r1 = dr;
+        Pesanan p1 = new Pesanan(3,c,r1);
+        r1.setDailyTariff(20000);
+        
+        Administrasi.pesananDitugaskan(p, r);
+        r.printData();
+        p.printData();
         /* Modul 3
         Lokasi lokasi = new Lokasi(69, 69, "Jauh");
         Customer customer = new Customer(22, "James");
