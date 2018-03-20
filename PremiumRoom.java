@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class PremiumRoom here.
+ * Class PremiumRoom untuk tipe room premium.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Luthfi Musthafa_1506673656
+ * @version 2018.03.20
  */
 public class PremiumRoom extends Room
 {

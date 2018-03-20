@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class DoubleRoom here.
+ * Class DoubleRoom untuk tipe room double.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Luthfi Musthafa_1506673656
+ * @version 2018.03.20
  */
 public class DoubleRoom extends Room
 {

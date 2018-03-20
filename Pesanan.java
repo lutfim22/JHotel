@@ -26,6 +26,7 @@ public class Pesanan
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
         this.kamar = kamar;
+        biaya = kamar.getDailyTariff()*jumlahHari;
     }
 
     /**

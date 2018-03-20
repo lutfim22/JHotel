@@ -21,8 +21,6 @@ public abstract class Room
      * @param hotel
      * @param nomor_kamar
      * @param isAvailable
-     * @param customer
-     * @param dailyTariff
      * @param status_kamar
      */
     public Room(Hotel hotel, String nomor_kamar, boolean isAvailable, StatusKamar status_kamar)
@@ -107,9 +105,9 @@ public abstract class Room
     }
     
     /**
-     * untuk menset nilai hotel.
+     * untuk menset nilai nomor kamar.
      * 
-     * @param hotel
+     * @param nomor_kamar
      */
     public void setNomorKamar(String nomor_kamar)
     {
@@ -167,6 +165,6 @@ public abstract class Room
         System.out.println("Tersedia: " +isAvailable);
         System.out.println("Harga: " +dailyTariff);
         System.out.println("Status Kamar: " +status_kamar);
-        System.out.println("Status layanan selesai: " +getTipeKamar());
+        System.out.println("Tipe Kamar: " +getTipeKamar());
     }
 }
