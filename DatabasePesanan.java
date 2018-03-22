@@ -7,58 +7,55 @@
  */
 public class DatabasePesanan
 {
-    // instance variables - replace the example below with your own
-    private static String[] list_pesanan;
+    private static Pesanan list_pesanan;
 
-    /**
-     * untuk menambahkan data pesanan.
-     * 
-     * @return false
-     */
+    /** 
+    * 
+    */
+    
     public static boolean addPesanan(Pesanan baru)
     {
-        //code
-        
+        list_pesanan = baru;
+        return false;
+    }
+
+    /** 
+    *
+    */
+    
+    public static boolean removePesanan()
+    {   
+        list_pesanan = null;
         return false;
     }
     
-    /**
-     * untuk menghapus data pesanan.
-     * 
-     * @return false
-     */
-    public static boolean removePesanan(Pesanan pesan)
-    {
-        //code
-        
-        return false;
-    }
-    
-    /**
-     * untuk mendapatkan database pesanan.
-     * 
-     * @return null
-     */
+    /** 
+    * Method yang digunakan untuk mengambil data pemesanan.
+    * @return Pesanan mengembalikan data pemesanan.
+    */
+
     public static Pesanan getPesanan(Customer cust)
     {
-        //code
-        
-        return null;
+        return list_pesanan;
     }
     
-    /**
-     * 
-     * @return null
-     */
+    /** 
+    * Method yang digunakan untuk mengambil data pesanan dari dalam database.
+    * @return String[] mengembalikan data dari database.
+    */
+
     public static String[] getPesananDatabase()
     {
-        //code
-        
         return null;
     }
+
+    /** 
+    * Method yang digunakan untuk membatalkan pesanan.
+    * @param Pesanan pesanan yang dibatalkan.
+    */
     
     public static void pesananDibatalkan(Pesanan pesan)
     {
-        //code
+        
     }
 }

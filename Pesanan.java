@@ -1,4 +1,8 @@
 import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+//import java.util.regex.*;
+import java.text.*;
 /**
  * class Pesanan untuk memodelkan pesanan.
  *
@@ -23,12 +27,22 @@ public class Pesanan
      * @param biaya
      * @param pelanggan
      */
-    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
+    public Pesanan()//double jumlahHari, Customer pelanggan, Room kamar, int tanggal, int bulan, int tahun)
     {
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
         this.kamar = kamar;
         biaya = kamar.getDailyTariff()*jumlahHari;
+        //this.tanggalPesan = new Date(tahun,bulan,tanggal);
+    }
+    
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, Date tanggalPesan)
+    {
+        this.jumlahHari = jumlahHari;
+        this.pelanggan = pelanggan;
+        this.kamar = kamar;
+        biaya = kamar.getDailyTariff()*jumlahHari;
+        this.tanggalPesan = tanggalPesan;
     }
 
     /**
@@ -95,6 +109,9 @@ public class Pesanan
     
     public Date getTanggalPesan()
     {
+        DateFormat df = new SimpleDateFormat("'DOB : 'dd MMMM yyyy");
+        String hasil = df.format(tanggalPesan);
+        System.out.println(hasil);
         return tanggalPesan;
     }
     
@@ -161,12 +178,26 @@ public class Pesanan
     
     public String toString()
     {
-        return string;
+        String final_status = "KOSONG";
+        
+        if (isDiproses == true && isSelesai == false){
+            final_status = "DIPROSES";
+        } else if (isDiproses == false && isSelesai == false){
+            final_status = "KOSONG";
+        } else if (isDiproses == false && isSelesai == true){
+            final_status = "SELESAI";
+        }
+        
+        return "Dibuat Oleh " +pelanggan.getNama() +
+                ".Proses booking untuk" +kamar.getHotel()+
+                "Kamar Nomor " + kamar.getNomorKamar()+
+                "dengan tipe kamar yang diinginkan "+kamar.getTipeKamar()+
+                ". Status :" +final_status+ ".";
     }
     
-    /**
+    /*
      * untuk menampilkan data pada class Pesanan.
-     */
+     
     public void printData()
     {
         System.out.printf("\nPesanan\n");
@@ -176,4 +207,5 @@ public class Pesanan
         System.out.println("Jumlah Hari: " +jumlahHari);
         System.out.println("Biaya: " +biaya);
     }
+    */
 }

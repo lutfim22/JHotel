@@ -96,7 +96,9 @@ public class Hotel
     
     public String toString()
     {
-        return string;
+        return"\nNama Hotel: "+nama+
+              "\nLokasi: "+lokasi.getDeskripsi()+
+              "\nBintang: "+bintang;
     }
     
     /**

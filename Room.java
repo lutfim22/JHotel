@@ -157,12 +157,25 @@ public abstract class Room
     
     public String toString()
     {
-        return string;
+        if(isAvailable==false){
+            return "\nNama Hotel: "+hotel.getNama()+
+                   "\nTipe Kamar: "+getTipeKamar()+
+                   "\nHarga: "+dailyTariff+
+                   "\nStatus Kamar: "+status_kamar;
+        }
+        else{
+            return "\nNama Hotel: "+hotel.getNama()+
+                   "\nTipe Kamar: "+getTipeKamar()+
+                   "\nHarga: "+dailyTariff+
+                   "\nStatus Kamar: "+status_kamar+
+                   "\nPelanggan: ";
+        }
     }
     
+    /*
     /**
      * untuk menampilkan data pada class Room.
-     */
+     
     public void printData()
     {
         System.out.printf("\nRoom\n");
@@ -173,4 +186,5 @@ public abstract class Room
         System.out.println("Status Kamar: " +status_kamar);
         System.out.println("Tipe Kamar: " +getTipeKamar());
     }
+    */
 }

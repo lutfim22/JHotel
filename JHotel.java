@@ -1,5 +1,7 @@
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Date;
+import java.text.*;
 /**
  * class JHotel sebagai class utama.
  *
@@ -18,9 +20,57 @@ public class JHotel
         System.out.print('\u000C');
         System.out.println("Welcome to JHotel");
         
-        //Modul4
-        Customer cust1 = new Customer(22,"Luthfi", new GregorianCalendar(2018,03,22).getTime());
-        System.out.println(cust1.dob);
+        //Modul5
+        //Customer cust1 = new Customer(22,"Luthfi",new GregorianCalendar(2018,02,22).getTime());
+        //cust1.getDOB();
+
+        Customer testing = new Customer(1, "luthfi", new GregorianCalendar(2018,2,14).getTime());
+        //System.out.println(testing.getDOB());
+        
+        Pesanan pesanan = new Pesanan();
+
+        DatabasePesanan.addPesanan(pesanan);
+        
+        System.out.println("\n\ntoString kelas Customer untuk kondisi pertama : \n\n");
+        System.out.println(testing.toString());
+        DatabasePesanan.removePesanan();
+        System.out.println("\n\ntoString kelas Customer untuk kondisi kedua   : \n\n");
+        System.out.println(testing.toString());
+        
+        Lokasi lokasi = new Lokasi(99, 999, "Taman Mawar");
+        Hotel hotel = new Hotel("Melati", lokasi, 7);
+        Room kamar = new SingleRoom(hotel, "GK301", true, StatusKamar.Vacant);
+        Pesanan pesan = new Pesanan(10, testing, kamar, new GregorianCalendar(2018,2,22).getTime());
+
+        kamar.setPesanan(pesan); 
+        
+        System.out.println("\n\ntoString kelas Room untuk kondisi pertama : \n\n");
+        System.out.println(kamar.toString());
+        kamar.setStatusAvailable(false);
+        System.out.println("\n\ntoString kelas Room untuk kondisi kedua   : \n\n");
+        System.out.println(kamar.toString());
+        
+        pesan.setStatusDiproses(true);
+        pesan.setStatusSelesai(false);
+        
+        System.out.println("\n\ntoString kelas Pesanan untuk kondisi pertama : \n\n");
+        System.out.println(pesan.toString());
+
+        pesan.setStatusDiproses(false);
+        pesan.setStatusSelesai(false);
+
+        System.out.println("\n\ntoString kelas Pesanan untuk kondisi kedua   : \n\n");
+        System.out.println(pesan.toString());
+        
+        pesan.setStatusDiproses(false);
+        pesan.setStatusSelesai(true);
+
+        System.out.println("\n\ntoString kelas Pesanan untuk kondisi ketiga   : \n\n");
+        System.out.println(pesan.toString());
+        
+        
+        //System.out.println(cust1.dob);
+        
         /* Modul4
         Lokasi lokasi = new Lokasi(69,69,"bebas");
         Hotel hotel = new Hotel("ASaasd",lokasi,7);

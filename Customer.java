@@ -2,6 +2,7 @@ import java.util.Date;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.regex.*;
+import java.text.*;
 /**
  * class Customer untuk memodelkan Customer.
  *
@@ -31,6 +32,7 @@ public class Customer
     {
         this.id = id;
         this.nama = nama;
+        this.dob = new Date(tahun,bulan,tanggal);
     }
     
     
@@ -74,6 +76,11 @@ public class Customer
     
     public Date getDOB()
     {
+        /*
+        DateFormat df = new SimpleDateFormat("'DOB : 'dd MMMM yyyy");
+        String hasil = df.format(dob);
+        System.out.println(hasil);
+        */
         return dob;
     }
     
@@ -126,16 +133,31 @@ public class Customer
     
     public String toString()
     {
-        return string;
+        if(true){
+            return "\nCustomer ID   : " + id +
+                   "\nName          : " + nama +
+                   "\nE-Mail        : " + email +
+                   "\nDate of Birth : " + dob +
+                   "\nBooking order is in progress";        
+        }
+       
+        else{
+            return "\nCustomer ID   : " + id +
+                   "\nName          : " + nama +
+                   "\nE-Mail        : " + email +
+                   "\nDate of Birth : " + dob;        
+        }
+        //return string;
     }
     
+    /*
     /**
      * untuk menampilkan data pada class Customer.
-     */
+     
     public void printData()
     {
         System.out.printf("\nCustomer\n");
         System.out.println("ID: " +id);
         System.out.println("Nama: " +nama);
-    }
+    }*/
 }
