@@ -19,8 +19,8 @@ public class JHotel
         System.out.println("Welcome to JHotel");
         
         //Modul4
-        Customer cust1 = new Customer(22,"Luthfi", new GregorianCalendar(2018,3,22).getTime());
-        System.out.println(cust1);
+        Customer cust1 = new Customer(22,"Luthfi", new GregorianCalendar(2018,03,22).getTime());
+        System.out.println(cust1.dob);
         /* Modul4
         Lokasi lokasi = new Lokasi(69,69,"bebas");
         Hotel hotel = new Hotel("ASaasd",lokasi,7);

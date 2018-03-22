@@ -38,7 +38,7 @@ public class Customer
     {
         this.id = id;
         this.nama = nama;
-        //this.dob = dob.setDate(_date_)
+        this.dob = dob;
     }
 
     /**
