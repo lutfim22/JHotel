@@ -1,9 +1,10 @@
-
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 /**
  * class JHotel sebagai class utama.
  *
  * @author Luthfi Musthafa_1506673656
- * @version 2018.03.10
+ * @version 2018.03.20
  */
 public class JHotel
 {    
@@ -17,7 +18,10 @@ public class JHotel
         System.out.print('\u000C');
         System.out.println("Welcome to JHotel");
         
-        //Modul 4
+        //Modul4
+        Customer cust1 = new Customer(22,"Luthfi", new GregorianCalendar(2018,3,22).getTime());
+        System.out.println(cust1);
+        /* Modul4
         Lokasi lokasi = new Lokasi(69,69,"bebas");
         Hotel hotel = new Hotel("ASaasd",lokasi,7);
         Room singleRoom = new SingleRoom(hotel,"222",true,StatusKamar.Booked);
@@ -66,6 +70,7 @@ public class JHotel
         Administrasi.pesananDitugaskan(p2, premiumRoom);
         premiumRoom.printData();
         p2.printData();
+        */
         
         /* Modul 3
         Lokasi lokasi = new Lokasi(69, 69, "Jauh");

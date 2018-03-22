@@ -1,4 +1,4 @@
-
+import java.util.Date;
 /**
  * class Pesanan untuk memodelkan pesanan.
  *
@@ -14,6 +14,8 @@ public class Pesanan
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
+    private Date tanggalPesan;
+    private String string;
 
     /**
      * Constructor for objects of class Pesanan.
@@ -91,6 +93,11 @@ public class Pesanan
         return kamar;
     }
     
+    public Date getTanggalPesan()
+    {
+        return tanggalPesan;
+    }
+    
     /**
      * Mutator for objects of class Pesanan
      * untuk menentukan nilai biaya.
@@ -101,6 +108,11 @@ public class Pesanan
     {
         
         biaya = kamar.getDailyTariff()*jumlahHari;
+    }
+    
+    public void setJumlahHari(double jumlahHari)
+    {
+        this.jumlahHari = jumlahHari;
     }
     
     /**
@@ -140,6 +152,16 @@ public class Pesanan
     public void setRoom(Room kamar)
     {
         this.kamar = kamar;
+    }
+    
+    public void setTanggalPesan(Date tanggalPesan)
+    {
+        this.tanggalPesan = tanggalPesan;
+    }
+    
+    public String toString()
+    {
+        return string;
     }
     
     /**

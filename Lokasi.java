@@ -11,6 +11,7 @@ public class Lokasi
     private float x_coord;
     private float y_coord;
     private String deskripsiLokasi;
+    private String string;
 
     /**
      * Constructor for objects of class Lokasi.
@@ -91,6 +92,11 @@ public class Lokasi
     public void setDeskripsi(String deskripsi)
     {
         deskripsiLokasi = deskripsi;
+    }
+    
+    public String toString()
+    {
+        return string;
     }
     
     /**

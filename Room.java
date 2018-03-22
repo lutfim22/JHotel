@@ -14,6 +14,7 @@ public abstract class Room
     private StatusKamar status_kamar;
     private Pesanan pesan;
     public double dailyTariff;
+    private String string;
 
     /**
      * Constructor for objects of class Room.
@@ -152,6 +153,11 @@ public abstract class Room
     public void setPesanan(Pesanan pesan)
     {
         this.pesan = pesan;
+    }
+    
+    public String toString()
+    {
+        return string;
     }
     
     /**

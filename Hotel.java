@@ -11,6 +11,7 @@ public class Hotel
     private String nama;
     private Lokasi lokasi;
     private int bintang;
+    private String string;
 
     /**
      * Constructor for objects of class Hotel.
@@ -91,6 +92,11 @@ public class Hotel
     public void setBintang(int bintang)
     {
         this.bintang = bintang;
+    }
+    
+    public String toString()
+    {
+        return string;
     }
     
     /**

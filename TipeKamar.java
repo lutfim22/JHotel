@@ -9,15 +9,15 @@ public enum TipeKamar
 {
     Single("Single"), Double("Double"), Premium("Premium");
     
-    private String tipe;
+    private String deskripsi;
     
-    TipeKamar(String tipe)
+    TipeKamar(String deskripsi)
     {
-        this.tipe = tipe;
+        this.deskripsi = deskripsi;
     }
     
     public String toString()
     {
-        return tipe;
+        return deskripsi;
     }
 }

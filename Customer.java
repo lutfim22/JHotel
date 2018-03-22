@@ -1,4 +1,7 @@
-
+import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.regex.*;
 /**
  * class Customer untuk memodelkan Customer.
  *
@@ -10,6 +13,13 @@ public class Customer
     // instance variables - replace the example below with your own
     protected int id;
     protected String nama;
+    protected String email;
+    protected Date dob;
+    private String string;
+    public static final Pattern VALID_EMAIL_ADDRESS_REGEX = 
+        Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+        +"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", Pattern.CASE_INSENSITIVE);
+    private GregorianCalendar obj1;
     
     /**
      * Constructor for objects of class Customer.
@@ -17,10 +27,18 @@ public class Customer
      * @param id
      * @param nama
      */
-    public Customer(int id, String nama)
+    public Customer(int id, String nama, int tanggal, int bulan, int tahun)
     {
         this.id = id;
         this.nama = nama;
+    }
+    
+    
+    public Customer(int id, String nama, Date dob)
+    {
+        this.id = id;
+        this.nama = nama;
+        //this.dob = dob.setDate(_date_)
     }
 
     /**
@@ -49,6 +67,16 @@ public class Customer
         return nama;
     }
     
+    public String getEmail()
+    {
+        return email;
+    }
+    
+    public Date getDOB()
+    {
+        return dob;
+    }
+    
     /**
      * Mutator for objects of class Customer
      * untuk menentukan nilai id.
@@ -69,6 +97,36 @@ public class Customer
     public void setNama(String nama)
     {
         this.nama = nama;
+    }
+    
+    public void setEmail(String email)
+    {
+        
+        //Matcher matcher = VALID_EMAIL_ADDRESS_REGEX .matcher(email)
+        if(validate(email) == true)
+        {
+            this.email = email;
+            System.out.println("Email: "+email+" valid");
+        }else{
+            this.email = email;
+            System.out.println("Email: "+email+" tidak valid");
+        }
+    }
+    
+    public static boolean validate(String emailStr) 
+    {
+        Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailStr);
+        return matcher.find();
+    }
+    
+    public void setDOB(Date dob)
+    {
+        this.dob = dob;
+    }
+    
+    public String toString()
+    {
+        return string;
     }
     
     /**
