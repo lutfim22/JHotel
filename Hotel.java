@@ -12,6 +12,11 @@ public class Hotel
     private Lokasi lokasi;
     private int bintang;
     private String string;
+    
+    public Hotel()
+    {
+        //
+    }
 
     /**
      * Constructor for objects of class Hotel.
@@ -96,19 +101,9 @@ public class Hotel
     
     public String toString()
     {
-        return"\nNama Hotel: "+nama+
-              "\nLokasi: "+lokasi.getDeskripsi()+
-              "\nBintang: "+bintang;
-    }
-    
-    /**
-     * untuk menampilkan data pada class Hotel.
-     */
-    public void printData()
-    {
-        System.out.printf("\nHotel\n");
-        System.out.println("Nama Hotel: " +nama);
-        System.out.println("Lokasi: " +lokasi.getDeskripsi());
-        System.out.println("Bintang: " +bintang);
+        return "\nHotel\n"+
+               "\nNama Hotel    : "+nama+
+               "\nLokasi        : "+lokasi.getDeskripsi()+
+               "\nBintang       : "+bintang;
     }
 }

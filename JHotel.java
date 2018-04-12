@@ -20,13 +20,12 @@ public class JHotel
         System.out.print('\u000C');
         System.out.println("Welcome to JHotel");
         
-        //Modul5
-        //Customer cust1 = new Customer(22,"Luthfi",new GregorianCalendar(2018,02,22).getTime());
-        //cust1.getDOB();
-
-        Customer testing = new Customer(1, "luthfi", new GregorianCalendar(2018,2,14).getTime());
-        //System.out.println(testing.getDOB());
         
+        
+        /*Modul5
+        Customer testing = new Customer(22, "Luthfi", 14, 00, 2018);
+        //testing.getDOB();
+      
         Pesanan pesanan = new Pesanan();
 
         DatabasePesanan.addPesanan(pesanan);
@@ -37,12 +36,12 @@ public class JHotel
         System.out.println("\n\ntoString kelas Customer untuk kondisi kedua   : \n\n");
         System.out.println(testing.toString());
         
-        Lokasi lokasi = new Lokasi(99, 999, "Taman Mawar");
-        Hotel hotel = new Hotel("Melati", lokasi, 7);
-        Room kamar = new SingleRoom(hotel, "GK301", true, StatusKamar.Vacant);
-        Pesanan pesan = new Pesanan(10, testing, kamar, new GregorianCalendar(2018,2,22).getTime());
+        Lokasi lokasi = new Lokasi(69, 69, "Jauh");
+        Hotel hotel = new Hotel("Alexis", lokasi, 7);
+        Room kamar = new SingleRoom(hotel, "S201", true, StatusKamar.Vacant);
+        Pesanan pesan = new Pesanan(10, testing, kamar, 14, 00, 2018);
 
-        kamar.setPesanan(pesan); 
+        kamar.setPesanan(pesan);
         
         System.out.println("\n\ntoString kelas Room untuk kondisi pertama : \n\n");
         System.out.println(kamar.toString());
@@ -67,9 +66,8 @@ public class JHotel
 
         System.out.println("\n\ntoString kelas Pesanan untuk kondisi ketiga   : \n\n");
         System.out.println(pesan.toString());
-        
-        
-        //System.out.println(cust1.dob);
+        */
+                
         
         /* Modul4
         Lokasi lokasi = new Lokasi(69,69,"bebas");

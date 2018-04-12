@@ -20,7 +20,11 @@ public class Customer
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX = 
         Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
         +"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", Pattern.CASE_INSENSITIVE);
-    private GregorianCalendar obj1;
+    
+    public Customer()
+    {
+        //code
+    }
     
     /**
      * Constructor for objects of class Customer.
@@ -32,7 +36,7 @@ public class Customer
     {
         this.id = id;
         this.nama = nama;
-        this.dob = new Date(tahun,bulan,tanggal);
+        this.dob = new GregorianCalendar(tahun,bulan,tanggal).getTime();
     }
     
     
@@ -76,11 +80,11 @@ public class Customer
     
     public Date getDOB()
     {
-        /*
+        
         DateFormat df = new SimpleDateFormat("'DOB : 'dd MMMM yyyy");
         String hasil = df.format(dob);
-        System.out.println(hasil);
-        */
+        System.out.printf(hasil);
+        
         return dob;
     }
     
@@ -134,30 +138,21 @@ public class Customer
     public String toString()
     {
         if(true){
-            return "\nCustomer ID   : " + id +
-                   "\nName          : " + nama +
-                   "\nE-Mail        : " + email +
-                   "\nDate of Birth : " + dob +
+            return "\nCustomer\n"+
+                   "\nCustomer ID   : " +id+
+                   "\nName          : " +nama+
+                   "\nE-Mail        : " +email+
+                   "\nDate of Birth : " +getDOB()+
                    "\nBooking order is in progress";        
         }
        
         else{
-            return "\nCustomer ID   : " + id +
-                   "\nName          : " + nama +
-                   "\nE-Mail        : " + email +
-                   "\nDate of Birth : " + dob;        
+            return "\nCustomer\n"+
+                   "\nCustomer ID   : " +id+
+                   "\nName          : " +nama+
+                   "\nE-Mail        : " +email+
+                   "\nDate of Birth : " +getDOB();        
         }
         //return string;
     }
-    
-    /*
-    /**
-     * untuk menampilkan data pada class Customer.
-     
-    public void printData()
-    {
-        System.out.printf("\nCustomer\n");
-        System.out.println("ID: " +id);
-        System.out.println("Nama: " +nama);
-    }*/
 }

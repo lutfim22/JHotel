@@ -1,13 +1,15 @@
 #BlueJ class context
 comment0.target=DoubleRoom
 comment0.text=\r\n\ Class\ DoubleRoom\ untuk\ tipe\ room\ double.\r\n\r\n\ @author\ Luthfi\ Musthafa_1506673656\r\n\ @version\ 2018.03.20\r\n
-comment1.params=hotel\ nomor_kamar\ isAvailable\ status_kamar
-comment1.target=DoubleRoom(Hotel,\ java.lang.String,\ boolean,\ StatusKamar)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DoubleRoom\r\n
-comment2.params=
-comment2.target=Customer\ getCustomer2()
+comment1.params=
+comment1.target=DoubleRoom()
+comment2.params=hotel\ nomor_kamar\ isAvailable\ status_kamar
+comment2.target=DoubleRoom(Hotel,\ java.lang.String,\ boolean,\ StatusKamar)
+comment2.text=\r\n\ Constructor\ for\ objects\ of\ class\ DoubleRoom\r\n
 comment3.params=
-comment3.target=TipeKamar\ getTipeKamar()
-comment4.params=customer2
-comment4.target=void\ setCustomer2(Customer)
-numComments=5
+comment3.target=Customer\ getCustomer2()
+comment4.params=
+comment4.target=TipeKamar\ getTipeKamar()
+comment5.params=customer2
+comment5.target=void\ setCustomer2(Customer)
+numComments=6

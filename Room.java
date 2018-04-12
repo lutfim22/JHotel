@@ -15,6 +15,11 @@ public abstract class Room
     private Pesanan pesan;
     public double dailyTariff;
     private String string;
+    
+    public Room()
+    {
+        //
+    }
 
     /**
      * Constructor for objects of class Room.
@@ -157,34 +162,20 @@ public abstract class Room
     
     public String toString()
     {
-        if(isAvailable==false){
-            return "\nNama Hotel: "+hotel.getNama()+
-                   "\nTipe Kamar: "+getTipeKamar()+
-                   "\nHarga: "+dailyTariff+
-                   "\nStatus Kamar: "+status_kamar;
+        if(isAvailable==true){
+            return "\nRoom\n"+
+                   "\nNama Hotel    : "+hotel.getNama()+
+                   "\nTipe Kamar    : "+getTipeKamar()+
+                   "\nHarga         : "+dailyTariff+
+                   "\nStatus Kamar  : "+status_kamar;
         }
         else{
-            return "\nNama Hotel: "+hotel.getNama()+
-                   "\nTipe Kamar: "+getTipeKamar()+
-                   "\nHarga: "+dailyTariff+
-                   "\nStatus Kamar: "+status_kamar+
-                   "\nPelanggan: ";
+            return "\nRoom\n"+
+                   "\nNama Hotel    : "+hotel.getNama()+
+                   "\nTipe Kamar    : "+getTipeKamar()+
+                   "\nHarga         : "+dailyTariff+
+                   "\nStatus Kamar  : "+status_kamar+
+                   "\nPelanggan     : ";
         }
     }
-    
-    /*
-    /**
-     * untuk menampilkan data pada class Room.
-     
-    public void printData()
-    {
-        System.out.printf("\nRoom\n");
-        System.out.println("Nama Hotel: " +hotel.getNama());
-        System.out.println("Nomor Kamar: " +nomor_kamar);
-        System.out.println("Tersedia: " +isAvailable);
-        System.out.println("Harga: " +dailyTariff);
-        System.out.println("Status Kamar: " +status_kamar);
-        System.out.println("Tipe Kamar: " +getTipeKamar());
-    }
-    */
 }

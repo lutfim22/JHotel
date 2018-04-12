@@ -21,19 +21,24 @@ public class Pesanan
     private Date tanggalPesan;
     private String string;
 
+    public Pesanan()
+    {
+        
+    }
+    
     /**
      * Constructor for objects of class Pesanan.
      * 
      * @param biaya
      * @param pelanggan
      */
-    public Pesanan()//double jumlahHari, Customer pelanggan, Room kamar, int tanggal, int bulan, int tahun)
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, int tanggal, int bulan, int tahun)
     {
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
         this.kamar = kamar;
         biaya = kamar.getDailyTariff()*jumlahHari;
-        //this.tanggalPesan = new Date(tahun,bulan,tanggal);
+        this.tanggalPesan = new GregorianCalendar(tahun,bulan,tanggal).getTime();
     }
     
     public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, Date tanggalPesan)
@@ -72,7 +77,6 @@ public class Pesanan
     public Customer getPelanggan()
     {
         //code
-        
         return pelanggan;
     }
     
@@ -173,6 +177,7 @@ public class Pesanan
     
     public void setTanggalPesan(Date tanggalPesan)
     {
+        
         this.tanggalPesan = tanggalPesan;
     }
     
@@ -188,24 +193,10 @@ public class Pesanan
             final_status = "SELESAI";
         }
         
-        return "Dibuat Oleh " +pelanggan.getNama() +
+        return  "Dibuat Oleh " +pelanggan.getNama() +
                 ".Proses booking untuk" +kamar.getHotel()+
                 "Kamar Nomor " + kamar.getNomorKamar()+
                 "dengan tipe kamar yang diinginkan "+kamar.getTipeKamar()+
                 ". Status :" +final_status+ ".";
     }
-    
-    /*
-     * untuk menampilkan data pada class Pesanan.
-     
-    public void printData()
-    {
-        System.out.printf("\nPesanan\n");
-        //System.out.println("Nama Pelanggan: " +nama_pelanggan);
-        System.out.println("Status layanan diproses: " +isDiproses);
-        System.out.println("Status layanan selesai: " +isSelesai);
-        System.out.println("Jumlah Hari: " +jumlahHari);
-        System.out.println("Biaya: " +biaya);
-    }
-    */
 }

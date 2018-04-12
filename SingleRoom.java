@@ -9,6 +9,12 @@ public class SingleRoom extends Room
 {
     // instance variables - replace the example below with your ow
     private static TipeKamar TIPE_KAMAR = TipeKamar.Single;
+    
+    public SingleRoom()
+    {
+        //
+    }
+    
     /**
      * Constructor for objects of class SingleRoom
      */

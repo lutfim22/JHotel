@@ -13,6 +13,11 @@ public class Lokasi
     private String deskripsiLokasi;
     private String string;
 
+    public Lokasi()
+    {
+        //
+    }
+    
     /**
      * Constructor for objects of class Lokasi.
      * 
@@ -96,19 +101,10 @@ public class Lokasi
     
     public String toString()
     {
-        return"\nKoordinat X: " +x_coord+
-              "Koordinat Y: " +y_coord+
-              "Deskripsi: " +deskripsiLokasi;
-    }
-    
-    /**
-     * untuk menampilkan data pada class Lokasi.
-     */
-    public void printData()
-    {
-        System.out.printf("\nLokasi\n");
-        System.out.println("Koordinat X: " +x_coord);
-        System.out.println("Koordinat Y: " +y_coord);
-        System.out.println("Deskripsi: " +deskripsiLokasi);
+        return"Lokasi"+
+              "\nKoordinat X    : " +x_coord+
+              "\nKoordinat Y    : " +y_coord+
+              "\nDeskripsi      : " +deskripsiLokasi+
+              "\n";
     }
 }
