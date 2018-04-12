@@ -10,7 +10,6 @@ public abstract class Room
     // instance variables
     private Hotel hotel;
     private String nomor_kamar;
-    //private boolean isAvailable;
     private StatusKamar status_kamar;
     private Pesanan pesan;
     public double dailyTariff;
@@ -164,9 +163,9 @@ public abstract class Room
     
     public String toString()
     {
-        return null;
-        /*
-        if(isAvailable==true){
+        //return null;
+
+        if(DatabasePesanan.getPesanan(this) == null){
             return "\nRoom\n"+
                    "\nNama Hotel    : "+hotel.getNama()+
                    "\nTipe Kamar    : "+getTipeKamar()+
@@ -181,6 +180,6 @@ public abstract class Room
                    "\nStatus Kamar  : "+status_kamar+
                    "\nPelanggan     : ";
         }
-        */
+
     }
 }

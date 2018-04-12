@@ -21,7 +21,6 @@ public class Pesanan
     private boolean isSelesai;
     private Room kamar;
     private Date tanggalPesan;
-    //private String string;
 
     public Pesanan()
     {
@@ -38,12 +37,9 @@ public class Pesanan
     {
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
-        isAktif = true;
-        Calendar c = new GregorianCalendar();
-        c.set(Calendar.HOUR_OF_DAY, 0); //anything 0 - 23
-        c.set(Calendar.MINUTE, 0);
-        c.set(Calendar.SECOND, 0);
-        Date d1 = c.getTime(); //the midnight, that's the first second of the day.
+        biaya = kamar.getDailyTariff()*jumlahHari;
+        id = DatabasePesanan.getLastPesananId()+1;
+        //isAktif = true;
     }
     /*
     public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, int tanggal, int bulan, int tahun)
@@ -106,7 +102,7 @@ public class Pesanan
      * 
      * @return isDiproses
      */
-    public boolean getStatusAkrif()
+    public boolean getStatusAktif()
     {
         return isAktif;
     }
