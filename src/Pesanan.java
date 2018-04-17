@@ -1,6 +1,4 @@
 import java.util.Date;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 //import java.util.regex.*;
 import java.text.*;
 /**
@@ -38,7 +36,7 @@ public class Pesanan
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
         biaya = kamar.getDailyTariff()*jumlahHari;
-        id = DatabasePesanan.getLastPesananId()+1;
+        id = DatabasePesanan.getLastPesananID()+1;
         //isAktif = true;
     }
     /*
@@ -222,7 +220,7 @@ public class Pesanan
             final_status = "SELESAI";
         }
         
-        return  "Dibuat Oleh " +pelanggan.getNama() +
+        return  "\nDibuat Oleh " +pelanggan.getNama() +
                 ".Proses booking untuk" +kamar.getHotel()+
                 "Kamar Nomor " + kamar.getNomorKamar()+
                 "dengan tipe kamar yang diinginkan "+kamar.getTipeKamar()+

@@ -11,7 +11,7 @@ public abstract class Room
     private Hotel hotel;
     private String nomor_kamar;
     private StatusKamar status_kamar;
-    private Pesanan pesan;
+    //private Pesanan pesan;
     public double dailyTariff;
     //private String string;
     
@@ -20,12 +20,20 @@ public abstract class Room
         //
     }
 
+    public Room(Hotel hotel, String nomor_kamar)
+    {
+        this.hotel = hotel;
+        this.nomor_kamar = nomor_kamar;
+        status_kamar = StatusKamar.Vacant;
+    }
+    /*
     public Room(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
     {
         this.hotel = hotel;
         this.nomor_kamar = nomor_kamar;
         this.status_kamar = status_kamar;
     }
+    */
     /*
     /**
      * Constructor for objects of class Room.
@@ -97,10 +105,11 @@ public abstract class Room
      *
      * @return pesan
      */
+    /*
     public Pesanan getPesanan()
     {
         return pesan;
-    }
+    }*/
     
     public abstract TipeKamar getTipeKamar();
     
@@ -154,12 +163,13 @@ public abstract class Room
     /**
      * untuk menset nilai pesanan.
      *
-     * @param pesan
+     *
      */
+    /*
     public void setPesanan(Pesanan pesan)
     {
         this.pesan = pesan;
-    }
+    }*/
     
     public String toString()
     {
@@ -175,10 +185,10 @@ public abstract class Room
         else{
             return "\nRoom\n"+
                    "\nNama Hotel    : "+hotel.getNama()+
-                   "\nTipe Kamar    : "+getTipeKamar()+
+                   "\nTipe Kamar    : "+getTipeKamar().toString()+
                    "\nHarga         : "+dailyTariff+
                    "\nStatus Kamar  : "+status_kamar+
-                   "\nPelanggan     : ";
+                   "\nPelanggan     : "+ DatabasePesanan.getPesanan(this).getPelanggan().getNama();
         }
 
     }

@@ -13,14 +13,12 @@ public class JHotel
     /**
      * Main method untuk class JHotel.
      * 
-     * @param args[]
+     * @param args
      */
     public static void main(String args[])
     {
         System.out.print('\u000C');
         System.out.println("Welcome to JHotel");
-        
-        
         
         /*Modul5
         Customer testing = new Customer(22, "Luthfi", 14, 00, 2018);

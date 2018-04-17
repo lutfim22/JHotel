@@ -21,7 +21,7 @@ public class SingleRoom extends Room
     public SingleRoom(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
     {
         // initialise instance variables
-        super(hotel, nomor_kamar, status_kamar);
+        super(hotel, nomor_kamar);
     }
     
     public TipeKamar getTipeKamar()

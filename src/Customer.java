@@ -1,5 +1,4 @@
 import java.util.Date;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.regex.*;
 import java.text.*;
@@ -20,29 +19,39 @@ public class Customer
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX = 
         Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
         +"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", Pattern.CASE_INSENSITIVE);
-    
+
+    /**
+     * Constructor default untuk objek dari class Customer.
+     */
     public Customer()
     {
         //code
     }
     
     /**
-     * Constructor for objects of class Customer.
-     * 
-     * @param id
-     * @param nama
+     * Overloading Constructor for objects of class Customer.
+     *
+     * @param nama berisi nama Customer
+     * @param tanggal berisi tanggal
+     * @param bulan berisi bulan
+     * @param tahun berisi tahun
      */
-    public Customer(int id, String nama, int tanggal, int bulan, int tahun)
+    public Customer(String nama, int tanggal, int bulan, int tahun)
     {
-        this.id = id;
+        id = DatabaseCustomer.getLastCustomerID()+1;
         this.nama = nama;
         this.dob = new GregorianCalendar(tahun,bulan,tanggal).getTime();
     }
-    
-    
-    public Customer(int id, String nama, Date dob)
+
+    /**
+     * Overloading Constructor for objects of class Customer.
+     *
+     * @param nama berisi nama customer.
+     * @param dob berisi objek Date.
+     */
+    public Customer(String nama, Date dob)
     {
-        this.id = id;
+        id = DatabaseCustomer.getLastCustomerID()+1;
         this.nama = nama;
         this.dob = dob;
     }
@@ -64,7 +73,7 @@ public class Customer
      * Accessor for objects of class Customer
      * untuk mendapatkan nilai nama.
      * 
-     * @return nama
+     * @return nama berisi nama customer.
      */
     public String getNama()
     {
@@ -72,12 +81,22 @@ public class Customer
         
         return nama;
     }
-    
+
+    /**
+     * untuk mendapatikan nilai email.
+     *
+     * @return email berisi email.
+     */
     public String getEmail()
     {
         return email;
     }
-    
+
+    /**
+     * untuk mendapatkan nilai tanggal bertipe Date
+     *
+     * @return dob
+     */
     public Date getDOB()
     {
         
@@ -92,7 +111,7 @@ public class Customer
      * Mutator for objects of class Customer
      * untuk menentukan nilai id.
      * 
-     * @param id
+     * @param id berisi id.
      */
     public void setID(int id)
     {
@@ -103,13 +122,18 @@ public class Customer
      * Mutator for objects of class Customer
      * untuk menentukan nilai id.
      * 
-     * @param nama
+     * @param nama berisi nama.
      */
     public void setNama(String nama)
     {
         this.nama = nama;
     }
-    
+
+    /**
+     * untuk menentukan nilai email.
+     *
+     * @param email berisi email.
+     */
     public void setEmail(String email)
     {
         
@@ -123,21 +147,36 @@ public class Customer
             System.out.println("Email: "+email+" tidak valid");
         }
     }
-    
+
+    /**
+     * untuk validasi pattern email.
+     *
+     * @param emailStr berisi email yang ingin divaildasi.
+     * @return mathcer.find()
+     */
     public static boolean validate(String emailStr) 
     {
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailStr);
         return matcher.find();
     }
-    
+
+    /**
+     * untuk menentukan nilai tanggal
+     *
+     * @param dob objek Date
+     */
     public void setDOB(Date dob)
     {
         this.dob = dob;
     }
-    
+
+    /**
+     * untuk mencetak String pada objek Customer
+     *
+     */
     public String toString()
     {
-        if(true){
+        if(DatabasePesanan.getPesananAktif(this) != null){
             return "\nCustomer\n"+
                    "\nCustomer ID   : " +id+
                    "\nName          : " +nama+

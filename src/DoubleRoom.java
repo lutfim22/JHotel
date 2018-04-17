@@ -22,7 +22,7 @@ public class DoubleRoom extends Room
     public DoubleRoom(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
     {
         // initialise instance variables
-        super(hotel, nomor_kamar, status_kamar);
+        super(hotel, nomor_kamar);
     }
     
     public Customer getCustomer2()

@@ -9,11 +9,19 @@ public class DatabaseRoom
 {
     private static ArrayList<Room> ROOM_DATABASE = new ArrayList<Room>();
 
+    /**
+     *
+     * @return ROOM_DATABASE
+     */
     public static ArrayList<Room> getRoomDatabase()
     {
         return ROOM_DATABASE;
     }
 
+    /**
+     *
+     * @param baru berisi objek Room
+     */
     public static boolean addRoom(Room baru)
     {
         for(Room kamar : ROOM_DATABASE){
@@ -25,6 +33,12 @@ public class DatabaseRoom
         return false;
     }
 
+    /**
+     *
+     * @param hotel berisi objek Hotel
+     * @param nomor_kamar berisi nomor kamar
+     * @return kamar
+     */
     public static Room getRoom(Hotel hotel, String nomor_kamar)
     {
         for(Room kamar : ROOM_DATABASE){
@@ -35,6 +49,11 @@ public class DatabaseRoom
         return null;
     }
 
+    /**
+     *
+     * @param hotel berisi objek Hotel
+     * @return tempRoom
+     */
     public static ArrayList<Room> getRoomsFromHotel(Hotel hotel)
     {
         ArrayList<Room> tempRoom = new ArrayList<Room>();
@@ -47,6 +66,10 @@ public class DatabaseRoom
         return tempRoom;
     }
 
+    /**
+     *
+     * @return tempRoom
+     */
     public static ArrayList<Room> getVacantRooms()
     {
         ArrayList<Room> tempRoom = new ArrayList<Room>();
@@ -59,6 +82,12 @@ public class DatabaseRoom
         return tempRoom;
     }
 
+    /**
+     *
+     * @param hotel berisi objek Hotel
+     * @param nomor_kamar berisi nomor kamar
+     * @return true
+     */
     public static boolean removeRoom(Hotel hotel, String nomor_kamar)
     {
         for(Room kamar : ROOM_DATABASE)
