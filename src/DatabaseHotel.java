@@ -29,16 +29,16 @@ public class DatabaseHotel
     public static boolean addHotel(Hotel baru)
     {
         for(Hotel hotel : HOTEL_DATABASE){
-            if(hotel.getID() != baru.getID()){
-                HOTEL_DATABASE.add(baru);
-                LAST_HOTEL_ID = baru.getID();
-                return true;
+            if(hotel.getID() == baru.getID()){
+                return false;
             }
         }
-        return false;
+        HOTEL_DATABASE.add(baru);
+        LAST_HOTEL_ID = baru.getID();
+        return true;
     }
 
-    public Hotel getHotel(int id)
+    public static Hotel getHotel(int id)
     {
         for(Hotel hotel : HOTEL_DATABASE){
             if(hotel.getID() == id){
@@ -61,8 +61,10 @@ public class DatabaseHotel
                 for (Room kamar : LIST_ROOM){
                     DatabaseRoom.removeRoom(hotel, kamar.getNomorKamar());
                 }
-                HOTEL_DATABASE.remove(hotel);
-                return true;
+                if (HOTEL_DATABASE.remove(hotel)){
+                    return true;
+                }
+
             }
         }
         return false;

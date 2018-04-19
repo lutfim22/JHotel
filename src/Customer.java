@@ -15,7 +15,6 @@ public class Customer
     protected String nama;
     protected String email;
     protected Date dob;
-    private String string;
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX = 
         Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
         +"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", Pattern.CASE_INSENSITIVE);
@@ -40,7 +39,7 @@ public class Customer
     {
         id = DatabaseCustomer.getLastCustomerID()+1;
         this.nama = nama;
-        this.dob = new GregorianCalendar(tahun,bulan,tanggal).getTime();
+        this.dob = new GregorianCalendar(tahun,bulan-1,tanggal).getTime();
     }
 
     /**
@@ -99,11 +98,11 @@ public class Customer
      */
     public Date getDOB()
     {
-        
+        /*
         DateFormat df = new SimpleDateFormat("'DOB : 'dd MMMM yyyy");
         String hasil = df.format(dob);
         System.out.printf(hasil);
-        
+        */
         return dob;
     }
     

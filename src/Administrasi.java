@@ -18,6 +18,7 @@ public class Administrasi
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(true);
         pesan.setRoom(kamar);
+
         kamar.setStatusKamar(StatusKamar.Booked);
         //roomAmbilPesanan(pesan, kamar);
     }
@@ -46,10 +47,12 @@ public class Administrasi
     public static void pesananDibatalkan(Room kamar)
     {
         //Pesanan pesan = kamar.getPesanan();
+        /*
         Pesanan pesan = DatabasePesanan.getPesanan(kamar);
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
+        */
         //kamar.setPesanan(null);
         kamar.setStatusKamar(StatusKamar.Vacant);
         //roomLepasPesanan(kamar);

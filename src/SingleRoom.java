@@ -18,7 +18,7 @@ public class SingleRoom extends Room
     /**
      * Constructor for objects of class SingleRoom
      */
-    public SingleRoom(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
+    public SingleRoom(Hotel hotel, String nomor_kamar)//, StatusKamar status_kamar)
     {
         // initialise instance variables
         super(hotel, nomor_kamar);

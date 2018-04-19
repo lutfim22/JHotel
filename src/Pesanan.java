@@ -1,6 +1,8 @@
 import java.util.Date;
 //import java.util.regex.*;
 import java.text.*;
+import java.util.GregorianCalendar;
+
 /**
  * class Pesanan untuk memodelkan pesanan.
  *
@@ -35,9 +37,10 @@ public class Pesanan
     {
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
-        biaya = kamar.getDailyTariff()*jumlahHari;
+        //biaya = kamar.getDailyTariff()*jumlahHari;
         id = DatabasePesanan.getLastPesananID()+1;
-        //isAktif = true;
+        isAktif = true;
+        tanggalPesan = new Date();
     }
     /*
     public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, int tanggal, int bulan, int tahun)
@@ -219,11 +222,22 @@ public class Pesanan
         } else if (isDiproses == false && isSelesai == true){
             final_status = "SELESAI";
         }
-        
-        return  "\nDibuat Oleh " +pelanggan.getNama() +
-                ".Proses booking untuk" +kamar.getHotel()+
-                "Kamar Nomor " + kamar.getNomorKamar()+
-                "dengan tipe kamar yang diinginkan "+kamar.getTipeKamar()+
-                ". Status :" +final_status+ ".";
+
+        if (kamar != null) {
+            return  "\nPesanan\n" +
+                    "\nDibuat Oleh          : " +pelanggan.getNama()+
+                    "\nJumlah hari          : " +jumlahHari+
+                    "\nProses booking untuk : " +kamar.getHotel().getNama()+
+                    "\nKamar Nomor          : " +kamar.getNomorKamar()+
+                    "\ntipe kamar           : " +kamar.getTipeKamar()+
+                    "\nStatus               : " +final_status;
+        }
+        return  "\nPesanan\n" +
+                "\nDibuat Oleh          : " +pelanggan.getNama()+
+                "\nJumlah hari          : " +jumlahHari+
+                "\nProses booking untuk : null" +
+                "\nKamar Nomor          : null" +
+                "\ntipe kamar           : null" +
+                "\nStatus               : " +final_status;
     }
 }

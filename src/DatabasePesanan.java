@@ -36,19 +36,14 @@ public class DatabasePesanan
      */
     public static boolean addPesanan(Pesanan baru)
     {
-        if(PESANAN_DATABASE.contains(baru)){
-            if(baru.getStatusAktif()){
+        for(Pesanan pesan : PESANAN_DATABASE){
+            if(pesan.getStatusAktif() && pesan.getId() == baru.getId()){
                 return false;
             }
-            else{
-                PESANAN_DATABASE.add(baru);
-                return true;
-            }
         }
-        else{
-            PESANAN_DATABASE.add(baru);
-            return true;
-        }
+        LAST_PESANAN_ID = baru.getId();
+        PESANAN_DATABASE.add(baru);
+        return true;
     }
 
     /**
@@ -91,10 +86,8 @@ public class DatabasePesanan
     public static Pesanan getPesananAktif(Customer pelanggan)
     {
         for(Pesanan pesanan : PESANAN_DATABASE){
-            if(pesanan.getPelanggan().equals(pelanggan)){
-                if(pesanan.getStatusAktif()){
-                    return pesanan;
-                }
+            if(pesanan.getPelanggan().equals(pelanggan) && pesanan.getStatusAktif()){
+                return pesanan;
             }
         }
         return null;

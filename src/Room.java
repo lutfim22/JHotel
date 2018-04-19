@@ -11,9 +11,7 @@ public abstract class Room
     private Hotel hotel;
     private String nomor_kamar;
     private StatusKamar status_kamar;
-    //private Pesanan pesan;
     public double dailyTariff;
-    //private String string;
     
     public Room()
     {
@@ -177,17 +175,17 @@ public abstract class Room
 
         if(DatabasePesanan.getPesanan(this) == null){
             return "\nRoom\n"+
-                   "\nNama Hotel    : "+hotel.getNama()+
+                   "\nNama Hotel    : "+getHotel().getNama()+
                    "\nTipe Kamar    : "+getTipeKamar()+
-                   "\nHarga         : "+dailyTariff+
-                   "\nStatus Kamar  : "+status_kamar;
+                   "\nHarga         : "+getDailyTariff()+
+                   "\nStatus Kamar  : "+getStatusKamar();
         }
         else{
             return "\nRoom\n"+
-                   "\nNama Hotel    : "+hotel.getNama()+
+                   "\nNama Hotel    : "+getHotel().getNama()+
                    "\nTipe Kamar    : "+getTipeKamar().toString()+
-                   "\nHarga         : "+dailyTariff+
-                   "\nStatus Kamar  : "+status_kamar+
+                   "\nHarga         : "+getDailyTariff()+
+                   "\nStatus Kamar  : "+getStatusKamar()+
                    "\nPelanggan     : "+ DatabasePesanan.getPesanan(this).getPelanggan().getNama();
         }
 

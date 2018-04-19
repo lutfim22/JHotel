@@ -28,16 +28,17 @@ public class DatabaseCustomer
     public static boolean addCustomer(Customer baru)
     {
         for(Customer customer : CUSTOMER_DATABASE){
-            if(customer.getID() != baru.getID()){
-                CUSTOMER_DATABASE.add(baru);
-                LAST_CUSTOMER_ID = baru.getID();
-                return true;
+            if(customer.getID() == baru.getID()){
+                return false;
+
             }
         }
-        return false;
+        CUSTOMER_DATABASE.add(baru);
+        LAST_CUSTOMER_ID = baru.getID();
+        return true;
     }
 
-    public Customer getCustomer(int id)
+    public static Customer getCustomer(int id)
     {
         for(Customer customer : CUSTOMER_DATABASE){
             if(customer.getID() == id){
@@ -57,11 +58,9 @@ public class DatabaseCustomer
         for(Customer customer : CUSTOMER_DATABASE){
             if (customer.getID() == id){
                 Pesanan pesan = DatabasePesanan.getPesananAktif(customer);
-                if(pesan != null){
-                    DatabasePesanan.removePesanan(pesan);
+                if (CUSTOMER_DATABASE.remove(customer)){
+                    return true;
                 }
-                CUSTOMER_DATABASE.remove(customer);
-                return true;
             }
         }
         return false;

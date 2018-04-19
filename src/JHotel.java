@@ -19,7 +19,56 @@ public class JHotel
     {
         System.out.print('\u000C');
         System.out.println("Welcome to JHotel");
-        
+
+        //Modul6
+        DatabaseCustomer.addCustomer(new Customer("Luthfi", 18, 4, 2018));
+        DatabaseCustomer.addCustomer(new Customer("Test", 18, 4, 2018));
+        DatabaseCustomer.addCustomer(new Customer("Test1", 18, 4, 2018));
+
+        for(Customer cust : DatabaseCustomer.getCustomerDatabase()){
+            System.out.println(cust);
+        }
+
+        DatabaseHotel.addHotel(new Hotel("Hotel1", new Lokasi(1,1,"desc"),7));
+        DatabaseHotel.addHotel(new Hotel("Hotel1", new Lokasi(1,1,"desc1"),7));
+        DatabaseHotel.addHotel(new Hotel("Hotel1", new Lokasi(1,1,"desc2"),7));
+
+        for(Hotel hotel : DatabaseHotel.getHotelDatabase()){
+            System.out.println(hotel);
+        }
+
+        DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1),"s201"));
+        DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(2),"s202"));
+        DatabaseRoom.addRoom(new PremiumRoom(DatabaseHotel.getHotel(3),"s203"));
+
+        for(Room kamar : DatabaseRoom.getRoomDatabase()){
+            System.out.println(kamar);
+        }
+
+
+        DatabasePesanan.addPesanan(new Pesanan(1,DatabaseCustomer.getCustomer(1)));
+        DatabasePesanan.addPesanan(new Pesanan(2,DatabaseCustomer.getCustomer(2)));
+        DatabasePesanan.addPesanan(new Pesanan(3,DatabaseCustomer.getCustomer(3)));
+
+        for(Pesanan pesanan : DatabasePesanan.getPesananDatabase()){
+            System.out.println(pesanan);
+        }
+
+        Administrasi.pesananDitugaskan(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(1)),DatabaseRoom.getRoom(DatabaseHotel.getHotel(1),"s201"));
+        Administrasi.pesananDitugaskan(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(2)),DatabaseRoom.getRoom(DatabaseHotel.getHotel(2),"s202"));
+        Administrasi.pesananDitugaskan(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(3)),DatabaseRoom.getRoom(DatabaseHotel.getHotel(3),"s203"));
+        for(Pesanan pesanan : DatabasePesanan.getPesananDatabase()){
+            System.out.println(pesanan);
+        }
+
+        Administrasi.pesananDibatalkan(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(1)));
+        Administrasi.pesananDibatalkan(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(2)));
+        Administrasi.pesananSelesai(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(3)));
+        for (Pesanan pesanan1 : DatabasePesanan.getPesananDatabase()){
+            System.out.println(pesanan1);
+        }
+
+
         /*Modul5
         Customer testing = new Customer(22, "Luthfi", 14, 00, 2018);
         //testing.getDOB();
