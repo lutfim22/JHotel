@@ -34,11 +34,12 @@ public class DatabasePesanan
      *
      * @param baru berisi objek pesanan.
      */
-    public static boolean addPesanan(Pesanan baru)
+    public static boolean addPesanan(Pesanan baru) throws PesananSudahAdaException
     {
         for(Pesanan pesan : PESANAN_DATABASE){
             if(pesan.getStatusAktif() && pesan.getId() == baru.getId()){
-                return false;
+                throw new PesananSudahAdaException(baru);
+                //return false;
             }
         }
         LAST_PESANAN_ID = baru.getId();
@@ -96,12 +97,12 @@ public class DatabasePesanan
     /**
      * untuk menghapus pesanan dari database.
      *
-     * @param pesan berisi objek pesanan.
+     * @param cust berisi objek pesanan.
      */
-    public static boolean removePesanan(Pesanan pesan)
+    public static boolean removePesanan(Customer cust) throws PesananTidakDitemukanException
     {
         for(Pesanan pesanan : PESANAN_DATABASE){
-            if(pesanan.equals(pesan)){
+            if(pesanan.getPelanggan().equals(cust)){
                 if(pesanan.getRoom() != null){
                     Administrasi.pesananDibatalkan(pesanan);
                 }
@@ -115,6 +116,7 @@ public class DatabasePesanan
                 }
             }
         }
-        return false;
+        throw new PesananTidakDitemukanException(cust);
+        //return false;
     }
 }

@@ -16,11 +16,216 @@ public class JHotel
      * @param args
      */
     public static void main(String args[])
-    {
+            throws PelangganSudahAdaException, PelangganTidakDitemukanException, HotelSudahAdaException, HotelTidakDitemukanException,
+                   RoomSudahAdaException, RoomTidakDitemukanException, PesananSudahAdaException, PesananTidakDitemukanException{
         System.out.print('\u000C');
-        System.out.println("Welcome to JHotel");
+        System.out.println("Welcome to JHotel\n");
 
-        //Modul6
+        //Modul 7
+        Customer C1 = new Customer("Luthfi", 14, 2,1997,"test.email@tes.com");
+        Customer C2 = new Customer("Joko", 4, 2,1997,"bebas.email@tes.com");
+        Customer C3 = new Customer("Test", 19, 4,1945,"error.email@tes.com");
+
+        Hotel H1 = new Hotel("Alexis", new Lokasi(1,1,"desc"),7);
+        Hotel H2 = new Hotel("Alexis", new Lokasi(1,1,"desc"),7);
+        Hotel H3 = new Hotel("Alexis", new Lokasi(1,1,"desc"),7);
+        Hotel H4 = new Hotel("Alexis", new Lokasi(1,1,"desc"),7);
+
+        Room R1 = new SingleRoom(H1,"s201");
+        Room R2 = new SingleRoom(H2,"s202");
+        Room R3 = new SingleRoom(H3,"s203");
+        Room R4 = new SingleRoom(H4,"s204");
+
+        Pesanan P1 = new Pesanan(3,C1);
+        Pesanan P2 = new Pesanan(3,C1);
+        Pesanan P3 = new Pesanan(3,C1);
+
+        //Percobaan Exception Sudah ada
+        System.out.println("Tes Exception Customer Sudah Ada\n");
+        try {
+            DatabaseCustomer.addCustomer(C1);
+        }
+        catch(PelangganSudahAdaException e) {
+            System.out.println(e.getPesan());
+        }
+        try {
+            DatabaseCustomer.addCustomer(C2);
+        }
+        catch(PelangganSudahAdaException e) {
+            System.out.println(e.getPesan());
+        }
+        try {
+            DatabaseCustomer.addCustomer(C3);
+            DatabaseCustomer.addCustomer(C3);
+        }
+        catch(PelangganSudahAdaException e) {
+            System.out.println(e.getPesan());
+        }
+
+        System.out.println("\nTes Exception Hotel Sudah Ada\n");
+        try {
+            DatabaseHotel.addHotel(H1);
+        }
+        catch(HotelSudahAdaException e) {
+            System.out.println(e.getPesan());
+        }
+        try {
+            DatabaseHotel.addHotel(H2);
+        }
+        catch(HotelSudahAdaException e) {
+            System.out.println(e.getPesan());
+        }
+        try {
+            DatabaseHotel.addHotel(H3);
+        }
+        catch(HotelSudahAdaException e) {
+            System.out.println(e.getPesan());
+        }
+        try {
+            DatabaseHotel.addHotel(H4);
+            DatabaseHotel.addHotel(H4);
+        }
+        catch(HotelSudahAdaException e) {
+            System.out.println(e.getPesan());
+        }
+
+        System.out.println("\nTes Exception Room Sudah Ada\n");
+        try {
+            DatabaseRoom.addRoom(R1);
+        } catch (RoomSudahAdaException e){
+            System.out.println(e.getPesan());
+        }
+        try {
+            DatabaseRoom.addRoom(R2);
+        } catch (RoomSudahAdaException e){
+            System.out.println(e.getPesan());
+        }
+        try {
+            DatabaseRoom.addRoom(R3);
+        } catch (RoomSudahAdaException e){
+            System.out.println(e.getPesan());
+        }
+        try {
+            DatabaseRoom.addRoom(R4);
+            DatabaseRoom.addRoom(R4);
+        } catch (RoomSudahAdaException e){
+            System.out.println(e.getPesan());
+        }
+
+        System.out.println("\nTes Exception Pesanan Sudah Ada\n");
+        try {
+            DatabasePesanan.addPesanan(P1);
+        } catch (PesananSudahAdaException e){
+            System.out.println(e.getPesan());
+        }
+        try {
+            DatabasePesanan.addPesanan(P2);
+        } catch (PesananSudahAdaException e){
+            System.out.println(e.getPesan());
+        }
+        try {
+            DatabasePesanan.addPesanan(P3);
+            DatabasePesanan.addPesanan(P3);
+        } catch (PesananSudahAdaException e){
+            System.out.println(e.getPesan());
+        }
+
+        /*
+        //Percobaan Exception Tidak ditemukan
+        System.out.println("\nTes Exception Customer Tidak Ditemukan");
+        try{
+            DatabaseCustomer.addCustomer(C1);
+            DatabaseCustomer.removeCustomer(10);
+            DatabaseCustomer.removeCustomer(1);
+        }
+        catch (PelangganTidakDitemukanException e){
+            System.out.println(e.getPesan());
+        }
+
+        System.out.println("\nTes Exception Hotel Tidak Ditemukan");
+        try {
+            DatabaseHotel.addHotel(H1);
+            DatabaseHotel.removeHotel(1);
+            DatabaseHotel.removeHotel(1);
+        }
+        catch (HotelTidakDitemukanException e) {
+            System.out.println(e.getPesan());
+        }
+
+        System.out.println("\nTes Exception Room Tidak Ditemukan");
+        try {
+            DatabaseRoom.addRoom(R1);
+            DatabaseRoom.removeRoom(H1, "S201");
+            DatabaseRoom.removeRoom(H1, "S201");
+        }
+        catch (RoomTidakDitemukanException e) {
+            System.out.println(e.getPesan());
+        }
+
+        System.out.println("\nTes Exception Pesanan Tidak Ditemukan");
+        try {
+            DatabasePesanan.addPesanan(P1);
+            DatabasePesanan.removePesanan(C1);
+            DatabasePesanan.removePesanan(C1);
+        }
+        catch (PesananTidakDitemukanException e) {
+            System.out.println(e.getPesan());
+        }*/
+
+        /*
+        //Database Akhir
+        try {
+            DatabaseCustomer.addCustomer(C1);
+            DatabaseCustomer.addCustomer(C2);
+            DatabaseCustomer.addCustomer(C3);
+            DatabaseCustomer.removeCustomer(1);
+            DatabaseCustomer.removeCustomer(1);
+            DatabaseHotel.addHotel(H1);
+            DatabaseHotel.addHotel(H2);
+            DatabaseHotel.addHotel(H3);
+            DatabaseHotel.addHotel(H4);
+            DatabaseHotel.addHotel(H4);
+            DatabaseHotel.removeHotel(1);
+            DatabaseHotel.removeHotel(1);
+            DatabaseRoom.addRoom(R1);
+            DatabaseRoom.addRoom(R2);
+            DatabaseRoom.addRoom(R1);
+            DatabaseRoom.removeRoom(H1, "S201");
+            DatabaseRoom.removeRoom(H1, "S201");
+            DatabasePesanan.addPesanan(P1);
+            DatabasePesanan.addPesanan(P2);
+            DatabasePesanan.addPesanan(P2);
+            DatabasePesanan.removePesanan(C1);
+            DatabasePesanan.removePesanan(C1);
+            DatabaseCustomer.addCustomer(C3);
+        }
+        catch(PelangganSudahAdaException e) {
+            System.out.println(e.getPesan());
+        }
+        catch(PelangganTidakDitemukanException e1) {
+            System.out.println(e1.getPesan());
+        }
+        catch(HotelSudahAdaException e2) {
+            System.out.println(e2.getPesan());
+        }
+        catch (RoomSudahAdaException e3){
+            System.out.println(e3.getPesan());
+        }
+        catch (PesananSudahAdaException e4){
+            System.out.println(e4.getPesan());
+        }
+        catch (HotelTidakDitemukanException e5) {
+            System.out.println(e5.getPesan());
+        }
+        catch (RoomTidakDitemukanException e6) {
+            System.out.println(e6.getPesan());
+        }
+        catch (PesananTidakDitemukanException e7) {
+            System.out.println(e7.getPesan());
+        }
+        */
+
+        /*
         DatabaseCustomer.addCustomer(new Customer("Luthfi", 18, 4, 2018));
         DatabaseCustomer.addCustomer(new Customer("Test", 18, 4, 2018));
         DatabaseCustomer.addCustomer(new Customer("Test1", 18, 4, 2018));
@@ -67,7 +272,7 @@ public class JHotel
         for (Pesanan pesanan1 : DatabasePesanan.getPesananDatabase()){
             System.out.println(pesanan1);
         }
-
+        */
 
         /*Modul5
         Customer testing = new Customer(22, "Luthfi", 14, 00, 2018);

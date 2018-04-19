@@ -22,11 +22,12 @@ public class DatabaseRoom
      *
      * @param baru berisi objek Room
      */
-    public static boolean addRoom(Room baru)
+    public static boolean addRoom(Room baru) throws RoomSudahAdaException
     {
         for(Room kamar : ROOM_DATABASE){
             if(kamar.getHotel().equals(baru.getHotel()) && kamar.getNomorKamar().equals(baru.getNomorKamar())){
-                return false;
+                throw new RoomSudahAdaException(baru);
+                //return false;
             }
         }
         ROOM_DATABASE.add(baru);
@@ -88,7 +89,7 @@ public class DatabaseRoom
      * @param nomor_kamar berisi nomor kamar
      * @return true
      */
-    public static boolean removeRoom(Hotel hotel, String nomor_kamar)
+    public static boolean removeRoom(Hotel hotel, String nomor_kamar) throws RoomTidakDitemukanException
     {
         for(Room kamar : ROOM_DATABASE)
         {
@@ -99,6 +100,7 @@ public class DatabaseRoom
                 }
             }
         }
-        return false;
+        throw new RoomTidakDitemukanException(hotel, nomor_kamar);
+        //return false;
     }
 }

@@ -35,11 +35,12 @@ public class Customer
      * @param bulan berisi bulan
      * @param tahun berisi tahun
      */
-    public Customer(String nama, int tanggal, int bulan, int tahun)
+    public Customer(String nama, int tanggal, int bulan, int tahun, String email)
     {
         id = DatabaseCustomer.getLastCustomerID()+1;
         this.nama = nama;
         this.dob = new GregorianCalendar(tahun,bulan-1,tanggal).getTime();
+        this.email = email;
     }
 
     /**
@@ -48,11 +49,12 @@ public class Customer
      * @param nama berisi nama customer.
      * @param dob berisi objek Date.
      */
-    public Customer(String nama, Date dob)
+    public Customer(String nama, Date dob, String email)
     {
         id = DatabaseCustomer.getLastCustomerID()+1;
         this.nama = nama;
         this.dob = dob;
+        this.email = email;
     }
 
     /**

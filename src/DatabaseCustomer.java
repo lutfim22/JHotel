@@ -25,12 +25,13 @@ public class DatabaseCustomer
      * 
      * @return false
      */
-    public static boolean addCustomer(Customer baru)
+    public static boolean addCustomer(Customer baru) throws PelangganSudahAdaException
     {
         for(Customer customer : CUSTOMER_DATABASE){
-            if(customer.getID() == baru.getID()){
-                return false;
-
+            if(customer.getID() == baru.getID() || customer.getEmail().equals(baru.getEmail())){
+                throw new PelangganSudahAdaException(baru);
+                //System.out.println();
+                //return false;
             }
         }
         CUSTOMER_DATABASE.add(baru);
@@ -53,11 +54,17 @@ public class DatabaseCustomer
      * 
      * @return false
      */
-    public static boolean removeCustomer(int id)
+    public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException
     {
         for(Customer customer : CUSTOMER_DATABASE){
             if (customer.getID() == id){
                 Pesanan pesan = DatabasePesanan.getPesananAktif(customer);
+                try {
+                    DatabasePesanan.removePesanan(customer);
+                }
+                catch (PesananTidakDitemukanException e){
+                    System.out.println(e.getPesan());
+                }
                 if (CUSTOMER_DATABASE.remove(customer)){
                     return true;
                 }
