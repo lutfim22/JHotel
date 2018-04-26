@@ -15,30 +15,22 @@ public class Administrasi
      */
     public static void pesananDitugaskan(Pesanan pesan, Room kamar)
     {
-        pesan.setStatusSelesai(false);
-        pesan.setStatusDiproses(true);
-        pesan.setRoom(kamar);
+        if(pesan != null && kamar != null)
+        {
+            if(kamar.getStatusKamar() == StatusKamar.Vacant)
+            {
+                pesan.setStatusSelesai(false);
+                pesan.setStatusDiproses(true);
+                pesan.setRoom(kamar);
 
-        kamar.setStatusKamar(StatusKamar.Booked);
-        //roomAmbilPesanan(pesan, kamar);
+                kamar.setStatusKamar(StatusKamar.Booked);
+            }
+            else {
+                pesan.setStatusAktif(false);
+            }
+        }
     }
 
-    /*
-    public static void roomAmbilPesanan(Pesanan pesan, Room kamar)
-    {
-        kamar.setStatusKamar(StatusKamar.Booked);
-        //kamar.setPesanan(pesan);
-    }
-    */
-
-    /*
-    public static void roomLepasPesanan(Room kamar)
-    {
-        kamar.setStatusKamar(StatusKamar.Vacant);
-        //kamar.setPesanan(null);
-    }
-    */
-    
     /**
      * untuk melakukan pembatalan pesanan.
      * 
@@ -47,12 +39,12 @@ public class Administrasi
     public static void pesananDibatalkan(Room kamar)
     {
         //Pesanan pesan = kamar.getPesanan();
-        /*
-        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+
+        Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
-        */
+
         //kamar.setPesanan(null);
         kamar.setStatusKamar(StatusKamar.Vacant);
         //roomLepasPesanan(kamar);
@@ -66,7 +58,7 @@ public class Administrasi
     public static void pesananSelesai(Room kamar)
     {
         //Pesanan pesan = kamar.getPesanan();
-        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);

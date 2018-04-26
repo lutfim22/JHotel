@@ -12,10 +12,11 @@ import java.text.*;
 public class Customer
 {
     // instance variables - replace the example below with your own
-    protected int id;
-    protected String nama;
-    protected String email;
-    protected Date dob;
+    private int id;
+    private String nama;
+    private String email;
+    private Date dob;
+    private String password;
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX = 
         Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
         +"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", Pattern.CASE_INSENSITIVE);
@@ -36,12 +37,13 @@ public class Customer
      * @param bulan berisi bulan
      * @param tahun berisi tahun
      */
-    public Customer(String nama, int tanggal, int bulan, int tahun, String email)
+    public Customer(String nama, int tanggal, int bulan, int tahun, String email, String password)
     {
         id = DatabaseCustomer.getLastCustomerID()+1;
         this.nama = nama;
         this.dob = new GregorianCalendar(tahun,bulan-1,tanggal).getTime();
         this.email = email;
+        this.password = password;
     }
 
     /**
@@ -50,12 +52,13 @@ public class Customer
      * @param nama berisi nama customer.
      * @param dob berisi objek Date.
      */
-    public Customer(String nama, Date dob, String email)
+    public Customer(String nama, Date dob, String email, String password)
     {
         id = DatabaseCustomer.getLastCustomerID()+1;
         this.nama = nama;
         this.dob = dob;
         this.email = email;
+        this.password = password;
     }
 
     /**
@@ -107,6 +110,11 @@ public class Customer
         System.out.printf(hasil);
         */
         return dob;
+    }
+
+    public String getPassword()
+    {
+        return password;
     }
     
     /**
@@ -170,6 +178,10 @@ public class Customer
     public void setDOB(Date dob)
     {
         this.dob = dob;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     /**

@@ -173,7 +173,7 @@ public abstract class Room
     {
         //return null;
 
-        if(DatabasePesanan.getPesanan(this) == null){
+        if(DatabasePesanan.getPesananAktif(this) == null){
             return "\nRoom\n"+
                    "\nNama Hotel    : "+getHotel().getNama()+
                    "\nTipe Kamar    : "+getTipeKamar()+
@@ -186,7 +186,7 @@ public abstract class Room
                    "\nTipe Kamar    : "+getTipeKamar().toString()+
                    "\nHarga         : "+getDailyTariff()+
                    "\nStatus Kamar  : "+getStatusKamar()+
-                   "\nPelanggan     : "+ DatabasePesanan.getPesanan(this).getPelanggan().getNama();
+                   "\nPelanggan     : "+ DatabasePesanan.getPesananAktif(this).getPelanggan().getNama();
         }
 
     }

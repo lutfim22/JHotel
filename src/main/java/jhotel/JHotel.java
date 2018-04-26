@@ -25,6 +25,40 @@ public class JHotel
                    RoomSudahAdaException, RoomTidakDitemukanException, PesananSudahAdaException, PesananTidakDitemukanException{
 
         SpringApplication.run(JHotel.class, args);
+        //Modul 8
+        /*
+        Hotel h1 = new Hotel("alexis", new Lokasi(1,1,"test"),7);
+        DatabaseHotel.addHotel(h1);
+        Room r1 = new SingleRoom(h1,"s201");
+        DatabaseRoom.addRoom(r1);
+        Room r2 = new DoubleRoom(h1,"s202");
+        DatabaseRoom.addRoom(r2);
+
+        Hotel h2 = new Hotel("alexis2", new Lokasi(2,2,"test2"),7);
+        DatabaseHotel.addHotel(h2);
+        Room r3 = new PremiumRoom(h2,"s203");
+        DatabaseRoom.addRoom(r3);
+        */
+
+        try{
+            DatabaseHotel.addHotel(new Hotel("alexis", new Lokasi(1, 1, "test"), 7));
+            DatabaseHotel.addHotel(new Hotel("alexis2", new Lokasi(2, 2, "test"), 7));
+        }
+        catch(HotelSudahAdaException e)
+        {
+            e.getPesan();
+        }
+
+        try
+        {
+            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "S201"));
+            DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(1), "S202"));
+            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(2), "S203"));
+        }
+        catch(RoomSudahAdaException e)
+        {
+            e.getPesan();
+        }
         /*
         System.out.print('\u000C');
         System.out.println("Welcome to JHotel\n");
