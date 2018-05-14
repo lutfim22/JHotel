@@ -2,8 +2,6 @@ package jhotel.controller;
 import jhotel.*;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-
 @RestController
 public class PesananController {
     @RequestMapping("/pesanancustomer/{id_customer}")
@@ -18,13 +16,14 @@ public class PesananController {
     }
 
     @RequestMapping(value = "/bookpesanan", method = RequestMethod.POST)
-    public Pesanan buatPesanan(@RequestParam(value="jumlah_hari") int jumlah_hari,
+    public Pesanan buatPesanan(@RequestParam(value="jumlah_hari") double jumlah_hari,
                                @RequestParam(value="id_customer") int id_customer,
                                @RequestParam(value="id_hotel") int id_hotel,
                                @RequestParam(value="nomor_kamar") String nomor_kamar)
     {
         try{
-            DatabasePesanan.addPesanan(new Pesanan(jumlah_hari, DatabaseCustomer.getCustomer(id_customer)));
+            DatabasePesanan.addPesanan(new Pesanan(jumlah_hari,
+                    DatabaseCustomer.getCustomer(id_customer)));
         }
         catch(PesananSudahAdaException a){
             a.getPesan();
@@ -40,9 +39,10 @@ public class PesananController {
     }
 
     @RequestMapping(value = "/cancelpesanan", method = RequestMethod.POST)
-    public Pesanan batalkanPesanan(@RequestParam(value="id_pesanan") int id_pesanan)
+    public Pesanan batalkanPesanan(@RequestParam(value="id_pesanan") String id_pesanan)
     {
-        Pesanan pesanan = DatabasePesanan.getPesanan(id_pesanan);
+        int id_pesan = Integer.parseInt(id_pesanan);
+        Pesanan pesanan = DatabasePesanan.getPesanan(id_pesan);
         if(pesanan!= null) {
             Administrasi.pesananDibatalkan(pesanan);
         }
@@ -50,9 +50,10 @@ public class PesananController {
     }
 
     @RequestMapping(value = "/finishpesanan", method = RequestMethod.POST)
-    public Pesanan selesaikanPesanan(@RequestParam(value="id_pesanan") int id_pesanan)
+    public Pesanan selesaikanPesanan(@RequestParam(value="id_pesanan") String id_pesanan)
     {
-        Pesanan pesanan = DatabasePesanan.getPesanan(id_pesanan);
+        int id_pesan = Integer.parseInt(id_pesanan);
+        Pesanan pesanan = DatabasePesanan.getPesanan(id_pesan);
         if(pesanan!= null) {
             Administrasi.pesananSelesai(pesanan);
         }

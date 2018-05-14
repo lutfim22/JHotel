@@ -27,7 +27,7 @@ public class CustomerController {
         Customer customer = new Customer(name, 10, 10, 2000, email, password);
         try {
             DatabaseCustomer.addCustomer(customer);
-        } catch(Exception ex) {
+        } catch(PelangganSudahAdaException ex) {
             ex.getMessage();
             return null;
         }
@@ -38,13 +38,11 @@ public class CustomerController {
     @RequestMapping(value = "/logincust", method = RequestMethod.POST)
     public Customer loginCust(@RequestParam String email, @RequestParam String password)
     {
-        Customer customer = DatabaseCustomer.getCustomerLogin(email,password);
-        return customer;
+        return DatabaseCustomer.getCustomerLogin(email,password);
     }
 
     @RequestMapping("/getcustomer/{id}")
     public Customer getCust(@PathVariable int id) {
-        Customer customer = DatabaseCustomer.getCustomer(id);
-        return customer;
+        return DatabaseCustomer.getCustomer(id);
     }
 }

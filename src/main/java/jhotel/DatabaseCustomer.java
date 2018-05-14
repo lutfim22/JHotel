@@ -1,22 +1,32 @@
 package jhotel;
+
 import java.util.ArrayList;
 
 /**
  * berisi Database Customer.
  *
  * @author Luthfi Musthafa_1506673656
- * @version 2018.03.10
+ * @version 2018.05.14
  */
 public class DatabaseCustomer
 {
-    // instance variables - replace the example below with your own
-    private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<Customer>();
+    private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<>();
     private static int LAST_CUSTOMER_ID = 0;
 
+    /**
+     * method untuk membuat arraylist berisi customer
+     *
+     * @return CUSTOMER_DATABASE
+     */
     public static ArrayList<Customer> getCustomerDatabase() {
         return CUSTOMER_DATABASE;
     }
 
+    /**
+     * untuk mendapatkan ID dari customer terakhir
+     *
+     * @return LAST_CUSTOMER_ID
+     */
     public static int getLastCustomerID() {
         return LAST_CUSTOMER_ID;
     }
@@ -24,15 +34,13 @@ public class DatabaseCustomer
     /**
      * untuk menambahkan data customer.
      * 
-     * @return false
+     * @return true
      */
     public static boolean addCustomer(Customer baru) throws PelangganSudahAdaException
     {
         for(Customer customer : CUSTOMER_DATABASE){
             if(customer.getID() == baru.getID() || customer.getEmail().equals(baru.getEmail())){
                 throw new PelangganSudahAdaException(baru);
-                //System.out.println();
-                //return false;
             }
         }
         CUSTOMER_DATABASE.add(baru);
@@ -40,6 +48,12 @@ public class DatabaseCustomer
         return true;
     }
 
+    /**
+     * untuk mendapatkan customer dengan id yang ditentukan
+     *
+     * @param id menentukan id customer
+     * @return customer
+     */
     public static Customer getCustomer(int id)
     {
         for(Customer customer : CUSTOMER_DATABASE){
@@ -50,6 +64,13 @@ public class DatabaseCustomer
         return null;
     }
 
+    /**
+     * untuk mendapatkan customer yang login menggunakan email dan passwordnya.
+     *
+     * @param email menentukan nilai email
+     * @param password menentukan nilai password
+     * @return customer
+     */
     public static Customer getCustomerLogin(String email, String password)
     {
         for(Customer customer : CUSTOMER_DATABASE){
@@ -62,7 +83,7 @@ public class DatabaseCustomer
     /**
      * untuk menghapus data customer.
      * 
-     * @return false
+     * @return true
      */
     public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException
     {

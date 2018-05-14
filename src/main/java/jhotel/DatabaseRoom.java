@@ -1,16 +1,19 @@
 package jhotel;
+
 import java.util.ArrayList;
+
 /**
  * berisi database ruangan.
  *
  * @author Luthfi Musthafa_1506673656
- * @version 2018.03.10
+ * @version 2018.05.14
  */
 public class DatabaseRoom
 {
-    private static ArrayList<Room> ROOM_DATABASE = new ArrayList<Room>();
+    private static ArrayList<Room> ROOM_DATABASE = new ArrayList<>();
 
     /**
+     * membuat arraylist berisi room
      *
      * @return ROOM_DATABASE
      */
@@ -20,6 +23,7 @@ public class DatabaseRoom
     }
 
     /**
+     * menambahkan database room
      *
      * @param baru berisi objek Room
      */
@@ -36,6 +40,7 @@ public class DatabaseRoom
     }
 
     /**
+     * mengambil database room berdasarkan hotel dan nomor kamar
      *
      * @param hotel berisi objek Hotel
      * @param nomor_kamar berisi nomor kamar
@@ -52,13 +57,14 @@ public class DatabaseRoom
     }
 
     /**
+     * mengambil arraylist room yang berasal dari hotel
      *
      * @param hotel berisi objek Hotel
      * @return tempRoom
      */
     public static ArrayList<Room> getRoomsFromHotel(Hotel hotel)
     {
-        ArrayList<Room> tempRoom = new ArrayList<Room>();
+        ArrayList<Room> tempRoom = new ArrayList<>();
 
         for(Room kamar : ROOM_DATABASE){
             if(kamar.getHotel().equals(hotel)){
@@ -69,12 +75,13 @@ public class DatabaseRoom
     }
 
     /**
+     * mengambil arraylist dari vacant room
      *
      * @return tempRoom
      */
     public static ArrayList<Room> getVacantRooms()
     {
-        ArrayList<Room> tempRoom = new ArrayList<Room>();
+        ArrayList<Room> tempRoom = new ArrayList<>();
 
         for(Room kamar : ROOM_DATABASE){
             if(kamar.getStatusKamar().equals(StatusKamar.Vacant)){
@@ -85,6 +92,7 @@ public class DatabaseRoom
     }
 
     /**
+     * menghapus database room
      *
      * @param hotel berisi objek Hotel
      * @param nomor_kamar berisi nomor kamar
@@ -102,6 +110,5 @@ public class DatabaseRoom
             }
         }
         throw new RoomTidakDitemukanException(hotel, nomor_kamar);
-        //return false;
     }
 }

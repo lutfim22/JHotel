@@ -3,7 +3,7 @@ package jhotel;
  * Class Room untuk pendataan ruangan pada JHotel.
  *
  * @author Luthfi Musthafa_1506673656
- * @version 2018.03.10
+ * @version 2018.05.14
  */
 public abstract class Room
 {
@@ -12,45 +12,25 @@ public abstract class Room
     private String nomor_kamar;
     private StatusKamar status_kamar;
     public double dailyTariff;
-    
-    public Room()
-    {
-        //
-    }
 
+    /**
+     * Default constructor for Class Room
+     */
+    public Room(){}
+
+    /**
+     * Overloading Constructor untuk kelas Room
+     *
+     * @param hotel objek hotel
+     * @param nomor_kamar nilai nomor kamar
+     */
     public Room(Hotel hotel, String nomor_kamar)
     {
         this.hotel = hotel;
         this.nomor_kamar = nomor_kamar;
         status_kamar = StatusKamar.Vacant;
     }
-    /*
-    public Room(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
-    {
-        this.hotel = hotel;
-        this.nomor_kamar = nomor_kamar;
-        this.status_kamar = status_kamar;
-    }
-    */
-    /*
-    /**
-     * Constructor for objects of class Room.
-     * 
-     * @param hotel
-     * @param nomor_kamar
-     * @param isAvailable
-     * @param status_kamar
-     */
-    /*
-    public Room(Hotel hotel, String nomor_kamar, boolean isAvailable, StatusKamar status_kamar)
-    {
-        // initialise instance variables
-        this.hotel = hotel;
-        this.nomor_kamar = nomor_kamar;
-        this.isAvailable = isAvailable;
-        this.status_kamar = status_kamar;
-    }
-    */
+
     /**
      * untuk mendapatkan nilai hotel.
      * 
@@ -72,13 +52,6 @@ public abstract class Room
     }
 
     /**
-     * untuk mengetahui status ketersediaan kamar.
-     *
-     * @return isAvailable
-     */
-
-    
-    /**
      * untuk mendapatkan nilai tarif.
      * 
      * @return dailyTariff
@@ -99,22 +72,15 @@ public abstract class Room
     }
 
     /**
-     * untuk mendapatkan nilai pesanan.
+     * abstract method untuk mendapatkan tipe kamar
      *
-     * @return pesan
      */
-    /*
-    public Pesanan getPesanan()
-    {
-        return pesan;
-    }*/
-    
     public abstract TipeKamar getTipeKamar();
     
     /**
      * untuk menset nilai hotel.
      * 
-     * @param hotel
+     * @param hotel objek hotel
      */
     public void setHotel(Hotel hotel)
     {
@@ -124,7 +90,7 @@ public abstract class Room
     /**
      * untuk menset nilai nomor kamar.
      * 
-     * @param nomor_kamar
+     * @param nomor_kamar nilai nomor kamar
      */
     public void setNomorKamar(String nomor_kamar)
     {
@@ -132,16 +98,9 @@ public abstract class Room
     }
 
     /**
-     * untuk menentukan status ketersediaan kamar.
-     *
-     * @param isAvailable
-     */
-
-
-    /**
      * untuk menset nilai tarif.
      * 
-     * @param dailytariff
+     * @param dailytariff nilai daily tariff
      */
     public void setDailyTariff(double dailytariff)
     {
@@ -151,28 +110,20 @@ public abstract class Room
     /**
      * untuk menset nilai status kamar.
      * 
-     * @param status_kamar
+     * @param status_kamar nilai status kamar
      */
     public void setStatusKamar(StatusKamar status_kamar)
     {
         this.status_kamar = status_kamar;
     }
-    
+
     /**
-     * untuk menset nilai pesanan.
+     * Method untuk mengubah objek menjadi String
      *
-     *
+     * @return string
      */
-    /*
-    public void setPesanan(Pesanan pesan)
-    {
-        this.pesan = pesan;
-    }*/
-    
     public String toString()
     {
-        //return null;
-
         if(DatabasePesanan.getPesananAktif(this) == null){
             return "\nRoom\n"+
                    "\nNama Hotel    : "+getHotel().getNama()+
@@ -186,8 +137,7 @@ public abstract class Room
                    "\nTipe Kamar    : "+getTipeKamar().toString()+
                    "\nHarga         : "+getDailyTariff()+
                    "\nStatus Kamar  : "+getStatusKamar()+
-                   "\nPelanggan     : "+ DatabasePesanan.getPesananAktif(this).getPelanggan().getNama();
+                   "\nPelanggan     : "+DatabasePesanan.getPesananAktif(this).getPelanggan().getNama();
         }
-
     }
 }

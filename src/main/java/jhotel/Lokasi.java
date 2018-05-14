@@ -3,7 +3,7 @@ package jhotel;
  * Class Lokasi berisi tentang data-data Lokasi Hotel.
  *
  * @author Luthfi Musthafa_1506673656
- * @version 2018.03.10
+ * @version 2018.05.14
  */
 public class Lokasi
 {
@@ -11,19 +11,19 @@ public class Lokasi
     private float x_coord;
     private float y_coord;
     private String deskripsiLokasi;
-    private String string;
 
-    public Lokasi()
-    {
-        //
-    }
+    /**
+     * Default Constructor for objects of class Lokasi.
+     *
+     */
+    public Lokasi(){}
     
     /**
-     * Constructor for objects of class Lokasi.
+     * Overloading Constructor for objects of class Lokasi.
      * 
-     * @param x_coord
-     * @param y_coord
-     * @param deskripsiLokasi
+     * @param x_coord mentukan koordinat x
+     * @param y_coord menentukan koordinat y
+     * @param deskripsiLokasi menentukan deskripsi lokasi
      */
     public Lokasi(float x_coord, float y_coord, String deskripsiLokasi)
     {
@@ -70,7 +70,7 @@ public class Lokasi
      * Mutator for objects of class Lokasi
      * untuk menentukan nilai X.
      * 
-     * @param x_coord
+     * @param x_coord set koordinat x
      */
     public void setX(float x_coord)
     {
@@ -81,7 +81,7 @@ public class Lokasi
      * Mutator for objects of class Lokasi
      * untuk menentukan nilai Y.
      * 
-     * @param y_coord
+     * @param y_coord set koordinat y
      */
     public void setY(float y_coord)
     {
@@ -92,13 +92,18 @@ public class Lokasi
      * Mutator for objects of class Lokasi
      * untuk menentukan nilai deskripsi.
      * 
-     * @param deskripsi
+     * @param deskripsi set deskripsi
      */
     public void setDeskripsi(String deskripsi)
     {
         deskripsiLokasi = deskripsi;
     }
-    
+
+    /**
+     * untuk mencetak String pada objek Lokasi
+     *
+     * @return string
+     */
     public String toString()
     {
         return"Lokasi"+

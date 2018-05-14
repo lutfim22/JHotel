@@ -1,4 +1,5 @@
 package jhotel;
+
 /**
  * Berisi informasi tentang hotel.
  *
@@ -12,19 +13,19 @@ public class Hotel
     private String nama;
     private Lokasi lokasi;
     private int bintang;
-    private String string;
-    
-    public Hotel()
-    {
-        //
-    }
 
     /**
-     * Constructor for objects of class Hotel.
+     * Default constructor for objects of class Hotel.
+     *
+     */
+    public Hotel(){}
+
+    /**
+     * Overloading constructor for objects of class Hotel.
      * 
-     * @param nama
-     * @param lokasi
-     * @param bintang
+     * @param nama menentukan nama hotel
+     * @param lokasi menentukan lokasi hotel
+     * @param bintang menentukan bintang hotel
      */
     public Hotel(String nama, Lokasi lokasi, int bintang)
     {
@@ -36,6 +37,7 @@ public class Hotel
     }
 
     /**
+     * mendapatkan nilai id
      *
      * @return id
      */
@@ -77,6 +79,7 @@ public class Hotel
     }
 
     /**
+     * menentukan nilai id
      *
      * @param id berisi id
      */
@@ -88,7 +91,7 @@ public class Hotel
      * Mutator for objects of class Hotel
      * untuk menentukan nilai nama.
      * 
-     * @param nama
+     * @param nama set nama
      */
     public void setNama(String nama)
     {
@@ -99,7 +102,7 @@ public class Hotel
      * Mutator for objects of class Hotel
      * untuk menentukan nilai lokasi.
      * 
-     * @param lokasi
+     * @param lokasi set lokasi
      */
     public void setLokasi(Lokasi lokasi)
     {
@@ -110,13 +113,18 @@ public class Hotel
      * Mutator for objects of class Hotel
      * untuk menentukan nilai bintang.
      * 
-     * @param bintang
+     * @param bintang set bintang
      */
     public void setBintang(int bintang)
     {
         this.bintang = bintang;
     }
-    
+
+    /**
+     * untuk mencetak String pada objek Customer
+     *
+     * @return string
+     */
     public String toString()
     {
         return "\nHotel\n"+

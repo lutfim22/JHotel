@@ -9,13 +9,11 @@ public class HotelController {
     @RequestMapping("/hotel")
     public ArrayList<Hotel> hotelList()
     {
-        ArrayList<Hotel> HOTEL_DATABASE = DatabaseHotel.getHotelDatabase();
-        return HOTEL_DATABASE;
+        return DatabaseHotel.getHotelDatabase();
     }
 
     @RequestMapping("/hotel/{id}")
     public Hotel getHotel(@PathVariable int id) {
-        Hotel hotel = DatabaseHotel.getHotel(id);
-        return hotel;
+        return DatabaseHotel.getHotel(id);
     }
 }

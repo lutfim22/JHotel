@@ -1,13 +1,13 @@
 package jhotel;
+
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.regex.*;
-import java.text.*;
 /**
  * class Customer untuk memodelkan Customer.
  *
  * @author Luthfi Musthafa_1506673656
- * @version 2018.03.10
+ * @version 2018.05.14
  */
 public class Customer
 {
@@ -17,8 +17,8 @@ public class Customer
     private String email;
     private Date dob;
     private String password;
-    public static final Pattern VALID_EMAIL_ADDRESS_REGEX = 
-        Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+    private static final Pattern VALID_EMAIL_ADDRESS_REGEX =
+        Pattern.compile("^[_A-Za-z0-9-+]+(\\.[_A-Za-z0-9-]+)*@"
         +"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", Pattern.CASE_INSENSITIVE);
 
     /**
@@ -69,8 +69,6 @@ public class Customer
      */
     public int getID()
     {
-        // put your code here
-        
         return id;
     }
     
@@ -82,8 +80,6 @@ public class Customer
      */
     public String getNama()
     {
-        //put your code here
-        
         return nama;
     }
 
@@ -104,11 +100,6 @@ public class Customer
      */
     public Date getDOB()
     {
-        /*
-        DateFormat df = new SimpleDateFormat("'DOB : 'dd MMMM yyyy");
-        String hasil = df.format(dob);
-        System.out.printf(hasil);
-        */
         return dob;
     }
 
@@ -146,9 +137,7 @@ public class Customer
      */
     public void setEmail(String email)
     {
-        
-        //Matcher matcher = VALID_EMAIL_ADDRESS_REGEX .matcher(email)
-        if(validate(email) == true)
+        if(validate(email))
         {
             this.email = email;
             System.out.println("Email: "+email+" valid");
@@ -180,6 +169,11 @@ public class Customer
         this.dob = dob;
     }
 
+    /**
+     * Menentukan password user
+     *
+     * @param password berisi password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
@@ -206,6 +200,5 @@ public class Customer
                    "\nE-Mail        : " +email+
                    "\nDate of Birth : " +getDOB();        
         }
-        //return string;
     }
 }

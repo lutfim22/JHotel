@@ -1,18 +1,20 @@
 package jhotel;
+
 import java.util.ArrayList;
 
 /**
  * berisi database pesanan.
  *
  * @author Luthfi Musthafa_1506673656
- * @version 2018.03.10
+ * @version 2018.05.14
  */
 public class DatabasePesanan
 {
-    private static ArrayList<Pesanan> PESANAN_DATABASE = new ArrayList<Pesanan>();
+    private static ArrayList<Pesanan> PESANAN_DATABASE = new ArrayList<>();
     private static int LAST_PESANAN_ID = 0;
 
     /**
+     * method untuk membuat arraylist berisi pesanan
      *
      * @return PESANAN_DATABASE
      */
@@ -22,6 +24,7 @@ public class DatabasePesanan
     }
 
     /**
+     * untuk mendapatkan ID dari pesanan terakhir
      *
      * @return LAST_PESANAN_ID
      */
@@ -83,7 +86,7 @@ public class DatabasePesanan
      * untuk mengambil data pesanan aktif
      *
      * @param pelanggan berisi objek Customer
-     * @return
+     * @return pesanan
      */
     public static Pesanan getPesananAktif(Customer pelanggan)
     {
@@ -118,6 +121,5 @@ public class DatabasePesanan
             }
         }
         throw new PesananTidakDitemukanException(cust);
-        //return false;
     }
 }

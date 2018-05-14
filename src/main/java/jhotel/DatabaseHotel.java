@@ -1,31 +1,42 @@
 package jhotel;
+
 import java.util.ArrayList;
 
 /**
  * berisi database hotel.
  *
  * @author Luthfi Musthafa_1506673656
- * @version 2018.03.10
+ * @version 2018.05.14
  */
 public class DatabaseHotel
 {
-    // instance variables - replace the example below with your own
-    private static ArrayList<Hotel> HOTEL_DATABASE = new ArrayList<Hotel>();
+    private static ArrayList<Hotel> HOTEL_DATABASE = new ArrayList<>();
     private static int LAST_HOTEL_ID = 0;
 
+    /**
+     * method untuk membuat arraylist berisi hotel
+     *
+     * @return HOTEL_DATABASE
+     */
     public static ArrayList<Hotel> getHotelDatabase()
     {
         return HOTEL_DATABASE;
     }
 
+    /**
+     * untuk mendapatkan ID dari hotel terakhir
+     *
+     * @return LAST_HOTEL_ID
+     */
     public static int getLastHotelID()
     {
         return LAST_HOTEL_ID;
     }
+
     /**
      * untuk menambahkan data hotel.
      * 
-     * @return false
+     * @return true
      */
     public static boolean addHotel(Hotel baru) throws HotelSudahAdaException
     {
@@ -40,6 +51,12 @@ public class DatabaseHotel
         return true;
     }
 
+    /**
+     * untuk mendapatkan hotel dengan id yang ditentukan
+     *
+     * @param id menentukan id hotel
+     * @return hotel
+     */
     public static Hotel getHotel(int id)
     {
         for(Hotel hotel : HOTEL_DATABASE){
@@ -53,7 +70,7 @@ public class DatabaseHotel
     /**
      * untuk menghapus data hotel.
      * 
-     * @return false
+     * @return true
      */
     public static boolean removeHotel(int id) throws HotelTidakDitemukanException
     {

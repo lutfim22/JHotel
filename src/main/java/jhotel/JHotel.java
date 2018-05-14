@@ -1,8 +1,5 @@
 package jhotel;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Date;
-import java.text.*;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * class JHotel sebagai class utama.
  *
  * @author Luthfi Musthafa_1506673656
- * @version 2018.03.20
+ * @version 2018.05.14
  */
 @SpringBootApplication
 public class JHotel
@@ -18,27 +15,31 @@ public class JHotel
     /**
      * Main method untuk class JHotel.
      * 
-     * @param args
+     * @param args argumen
      */
-    public static void main(String args[])
-            throws PelangganSudahAdaException, PelangganTidakDitemukanException, HotelSudahAdaException, HotelTidakDitemukanException,
-                   RoomSudahAdaException, RoomTidakDitemukanException, PesananSudahAdaException, PesananTidakDitemukanException{
+    public static void main(String args[]) {
+        //menambahkan objek hotel ke database
+        try{
+            DatabaseHotel.addHotel(new Hotel("JHotel", new Lokasi(1, 1, "Jakarta"), 7));
+        }
+        catch(HotelSudahAdaException e) {
+            e.getPesan();
+        }
+
+        //menambahkan objek room ke database
+        try {
+            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "S201"));
+            DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(1), "S202"));
+            DatabaseRoom.addRoom(new PremiumRoom(DatabaseHotel.getHotel(2), "S203"));
+        }
+        catch(RoomSudahAdaException e) {
+            e.getPesan();
+        }
 
         SpringApplication.run(JHotel.class, args);
+
         //Modul 8
         /*
-        Hotel h1 = new Hotel("alexis", new Lokasi(1,1,"test"),7);
-        DatabaseHotel.addHotel(h1);
-        Room r1 = new SingleRoom(h1,"s201");
-        DatabaseRoom.addRoom(r1);
-        Room r2 = new DoubleRoom(h1,"s202");
-        DatabaseRoom.addRoom(r2);
-
-        Hotel h2 = new Hotel("alexis2", new Lokasi(2,2,"test2"),7);
-        DatabaseHotel.addHotel(h2);
-        Room r3 = new PremiumRoom(h2,"s203");
-        DatabaseRoom.addRoom(r3);
-        */
 
         try{
             DatabaseHotel.addHotel(new Hotel("alexis", new Lokasi(1, 1, "test"), 7));

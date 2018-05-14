@@ -1,14 +1,14 @@
 package jhotel;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
-//import java.util.regex.*;
-import java.text.*;
-import java.util.GregorianCalendar;
 
 /**
  * class Pesanan untuk memodelkan pesanan.
  *
  * @author Luthfi Musthafa_1506673656
- * @version 2018.03.10
+ * @version 2018.05.14
  */
 public class Pesanan
 {
@@ -23,46 +23,36 @@ public class Pesanan
     private Room kamar;
     private Date tanggalPesan;
 
+    /**
+     * Default Constructor for objects of class Pesanan.
+     *
+     */
     public Pesanan()
     {
         
     }
     
     /**
-     * Constructor for objects of class Pesanan.
+     * Overloading Constructor for objects of class Pesanan.
      * 
-     *
+     * @param jumlahHari berisi jumlah hari
+     * @param pelanggan objek Customer
      */
 
     public  Pesanan(double jumlahHari, Customer pelanggan)
     {
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
-        //biaya = kamar.getDailyTariff()*jumlahHari;
         id = DatabasePesanan.getLastPesananID()+1;
         isAktif = true;
         tanggalPesan = new Date();
     }
-    /*
-    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, int tanggal, int bulan, int tahun)
-    {
-        this.jumlahHari = jumlahHari;
-        this.pelanggan = pelanggan;
-        this.kamar = kamar;
-        biaya = kamar.getDailyTariff()*jumlahHari;
-        this.tanggalPesan = new GregorianCalendar(tahun,bulan,tanggal).getTime();
-    }
-    
-    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, Date tanggalPesan)
-    {
-        this.jumlahHari = jumlahHari;
-        this.pelanggan = pelanggan;
-        this.kamar = kamar;
-        biaya = kamar.getDailyTariff()*jumlahHari;
-        this.tanggalPesan = tanggalPesan;
-    }
-    */
 
+    /**
+     * mendaptkan nilai id pesanan
+     *
+     * @return id
+     */
     public int getId()
     {
         return id;
@@ -76,8 +66,6 @@ public class Pesanan
      */
     public double getBiaya()
     {
-        //code
-        
         return biaya;
     }
     
@@ -94,24 +82,27 @@ public class Pesanan
      */
     public Customer getPelanggan()
     {
-        //code
         return pelanggan;
     }
     
     /**
      * Accessor for objects of class Pesanan
-     * untuk mendapatkan nilai status diproses.
+     * untuk mendapatkan nilai status aktif.
      * 
-     * @return isDiproses
+     * @return isAktif
      */
     public boolean getStatusAktif()
     {
         return isAktif;
     }
+
+    /**
+     * mendaptakan nilai status diproses.
+     *
+     * @return isDiproses
+     */
     public boolean getStatusDiproses()
     {
-        //code
-        
         return isDiproses;
     }
     
@@ -123,8 +114,6 @@ public class Pesanan
      */
     public boolean getStatusSelesai()
     {
-        //code
-        
         return isSelesai;
     }
     
@@ -132,7 +121,12 @@ public class Pesanan
     {
         return kamar;
     }
-    
+
+    /**
+     * mendaptakan nilai tanggal pesan
+     *
+     * @return tanggalPesan
+     */
     public Date getTanggalPesan()
     {
         DateFormat df = new SimpleDateFormat("'DOB : 'dd MMMM yyyy");
@@ -143,14 +137,19 @@ public class Pesanan
     
     /**
      * Mutator for objects of class Pesanan
-     * untuk menentukan nilai biaya.
+     * untuk menentukan nilai ID.
      * 
-     *
+     * @param id berisi id pesanan
      */
     public void  setId(int id)
     {
         this.id = id;
     }
+
+    /**
+     * menentukan nilai biaya
+     *
+     */
     public void setBiaya()
     {
         
@@ -166,7 +165,7 @@ public class Pesanan
      * Mutator for objects of class Pesanan
      * untuk menenetukan nilai pelanggan.
      * 
-     *
+     * @param pelanggan objek Costumer
      */
     public void setPelanggan(Customer pelanggan)
     {
@@ -182,7 +181,7 @@ public class Pesanan
      * Mutator for objects of class Pesanan
      * untuk menentukan nilai status diproses.
      * 
-     * @param diproses
+     * @param diproses set status diproses
      */
 
     public void setStatusDiproses(boolean diproses)
@@ -194,7 +193,7 @@ public class Pesanan
      * Mutator for objects of class Pesanan
      * untuk menentukan nilai status selesai.
      * 
-     *
+     * @param selesai status pesanan selesai
      */
     public void setStatusSelesai(boolean selesai)
     {
@@ -216,11 +215,11 @@ public class Pesanan
     {
         String final_status = "KOSONG";
         
-        if (isDiproses == true && isSelesai == false){
+        if (isDiproses && !isSelesai){
             final_status = "DIPROSES";
-        } else if (isDiproses == false && isSelesai == false){
+        } else if (!isDiproses && !isSelesai){
             final_status = "KOSONG";
-        } else if (isDiproses == false && isSelesai == true){
+        } else if (!isDiproses && isSelesai){
             final_status = "SELESAI";
         }
 

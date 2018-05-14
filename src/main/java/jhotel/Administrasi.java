@@ -1,9 +1,10 @@
 package jhotel;
+
 /**
  * Class Administrasi untuk melakukan kegiatan administrasi JHotel.
  *
  * @author Luthfi Musthafa_1506673656
- * @version 2018.03.10
+ * @version 2018.05.14
  */
 public class Administrasi
 {
@@ -38,16 +39,12 @@ public class Administrasi
      */
     public static void pesananDibatalkan(Room kamar)
     {
-        //Pesanan pesan = kamar.getPesanan();
-
         Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
 
-        //kamar.setPesanan(null);
         kamar.setStatusKamar(StatusKamar.Vacant);
-        //roomLepasPesanan(kamar);
     }
     
     /**
@@ -57,14 +54,12 @@ public class Administrasi
      */
     public static void pesananSelesai(Room kamar)
     {
-        //Pesanan pesan = kamar.getPesanan();
+
         Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
-        //kamar.setPesanan(null);
         kamar.setStatusKamar(StatusKamar.Vacant);
-        //roomLepasPesanan(kamar);
     }
     
     /**
@@ -74,10 +69,7 @@ public class Administrasi
      */
     public static void pesananDibatalkan(Pesanan pesan)
     {
-        //kamar.setStatusKamar(StatusKamar.Vacant);
         pesan.getRoom().setStatusKamar(StatusKamar.Vacant);
-        //roomLepasPesanan(pesan.getRoom());
-        
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
@@ -92,8 +84,6 @@ public class Administrasi
     public static void pesananSelesai(Pesanan pesan)
     {
         pesan.getRoom().setStatusKamar(StatusKamar.Vacant);
-        //roomLepasPesanan(pesan.getRoom());
-
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
