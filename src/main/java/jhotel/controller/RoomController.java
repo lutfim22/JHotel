@@ -1,4 +1,5 @@
 package jhotel.controller;
+
 import jhotel.*;
 import org.springframework.web.bind.annotation.*;
 

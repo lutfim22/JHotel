@@ -2,12 +2,6 @@ package jhotel.controller;
 
 import jhotel.*;
 import org.springframework.web.bind.annotation.*;
-/*
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-*/
 
 @RestController
 public class CustomerController {
@@ -18,7 +12,6 @@ public class CustomerController {
     }
 
     @RequestMapping(value = "/newcustomer", method = RequestMethod.POST)
-    //public Customer newCust(){
     public Customer newCust(@RequestParam(value = "name") String name,
                             @RequestParam(value = "email") String email,
                             //@RequestParam(value = "tahun", required = false, defaultValue = "2000") int tahun,
